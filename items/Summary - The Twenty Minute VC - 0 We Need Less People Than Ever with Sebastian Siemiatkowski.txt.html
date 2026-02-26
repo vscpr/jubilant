@@ -1,0 +1,121 @@
+<h2>The CEO Who Shrank His Company in Half — On Purpose</h2>
+
+<p>Sebastian Siemiatkowski didn't ask for a single additional dollar when he told Klarna's board he wanted to launch peer-to-peer payments, trading, international remittances, savings accounts, and a full card product. He presented a budget that was actually shrinking. The company had gone from 7,000 employees to fewer than 3,000 — a 50 percent reduction, achieved mostly through natural attrition — and he planned to do more with less. The board approved everything without a fight. That, Siemiatkowski told Harry Stebbings on 20VC, is what happens when AI becomes your operating leverage.</p>
+
+<p>The founder and CEO of Klarna has spent the better part of two decades building toward a single vision: become the digital financial assistant that wakes you up in the morning, tells you you're overpaying on your mortgage, and renegotiates it for you before you've had your coffee. He articulated that vision in 2015, when Klarna was losing the payments wars to Stripe and Adyen. Today, with AI finally capable of executing on that vision, he's running one of the most aggressive AI-first transformations happening inside a large financial company — and he's doing it without hiding the consequences.</p>
+
+<h2>The Headcount Thesis</h2>
+
+<p>Most CEOs soften the story. Siemiatkowski doesn't. When Klarna's AI customer service system handled the equivalent of 700 agents' worth of work in 2023, he said so publicly. The media simplified it, critics were angry, and a Bloomberg headline later made it look like he was rolling it back. He wasn't. He was making a more nuanced point: AI will handle the transactional, low-context interactions cheaply, while the premium human offering will shift toward genuine relationship — the kind of personalized, high-touch service that feels like a privilege precisely because it's rare.</p>
+
+<p>To operationalize that shift, Klarna built what Siemiatkowski calls an "Uber model" for customer service — recruiting their most passionate customers, people who actually love the product, and letting them pick up flexible shifts handling support. Net Promoter Scores for those interactions have been exceptional. The gig-economy mechanic isn't a fallback; it's a deliberate upgrade of who's on the other end of the conversation.</p>
+
+<p>Meanwhile, the remaining workforce at Klarna is compensated dramatically better. As the company shrank, per-head compensation grew nearly 50 percent. The deal Siemiatkowski struck with his employees was explicit: this transformation will generate more profit, and you will share in it. That's not just good ethics — it's practical. It creates organizational safety during a period of profound change, which is the prerequisite for the kind of risk-taking that transformation requires.</p>
+
+<p>By 2030, he expects Klarna's headcount to be well below 2,000. The jobs that remain will be relational ones — the people in Portland talking to Nike, in Amsterdam talking to Adyen, in China talking to merchants. The jobs AI is taking are not those jobs. They're the ones that were never great human work to begin with.</p>
+
+<h2>The SaaS Funeral</h2>
+
+<p>Siemiatkowski is bearish on enterprise software in a way that goes beyond the standard "AI is disrupting SaaS" talking point. His argument has a specific mechanism. Right now, the only cost that's collapsed is the cost of generating software. The next domino is switching costs — and agents will knock it over. Once AI can pull your data out of one vendor's model and migrate it to another with a single command, the moat that made SaaS so defensible dissolves. The companies that built empires on proprietary data models and high switching costs become utilities. And utilities don't trade at 20 to 30 times sales; they trade at one to two.</p>
+
+<p>He doesn't think large enterprises will vibe-code their own systems. But he does think the winner in enterprise software will look less like a collection of integrated point solutions and more like a "company in a box" — a single intelligent system built on open-source components with an AI layer on top. He built a rough prototype on a weekend to test the idea: open-source accounting software, open-source CRM, Claude agent on top, natural language queries to book invoices and check balances. It worked well. The accounting firms that currently handle those tasks for small businesses? Threatened.</p>
+
+<p>For Klarna specifically, the reason to build rather than buy was epistemic. Customer service AI needs context — not documentation, which is always slightly wrong, but actual source code. How does Klarna calculate interest? The truth lives deep in the codebase. Once you realize your AI needs to read your source code to do its job properly, you realize you can't buy this off the shelf. It becomes part of your technology stack, which means it has to be yours.</p>
+
+<h2>AI as Compression Technology</h2>
+
+<p>The most intellectually distinctive segment of the conversation wasn't about Klarna at all. It was Siemiatkowski's theory of why AI models can compress all of human knowledge into a few hundred gigabytes — and what that implies for the data center boom.</p>
+
+<p>His framing: AI is fundamentally a compression technology. Every large enterprise has the same information duplicated across Slack, Salesforce, Google Docs, emails — thousands of slightly different representations of the same facts. Wikipedia solved this problem with extraordinary discipline, building the world's most successful knowledge graph by making it almost impossible to create a new article (you can only create one if you search for something that doesn't exist). Enterprises have never had that discipline, which is why their data is a mess.</p>
+
+<p>When a model trains on this redundant information, it doesn't store duplicates. If it hears the same fact enough times, it compresses it into a single representation. That's how the entire internet fits on a USB stick. And that's also, Siemiatkowski argues, why enterprise AI will require dramatically less compute over time, not more. As AI helps organizations identify duplication and consolidate to single sources of truth, the need to run redundant inference across redundant data collapses. He's cautious about overstating this — he doesn't want to be the guy who said there would only ever be four computers in the world — but the directional logic is clean.</p>
+
+<p>The counterforce is generative entertainment: the Star Wars movie with your face on Luke's body, rendered on demand. That requires generation, not compression, and generation is compute-hungry. Which force wins — enterprise compression or consumer generation — determines whether the data center boom continues or plateaus. He genuinely doesn't know. Neither does anyone else, but most people aren't framing the question this clearly.</p>
+
+<h2>The Race to Be the Financial Assistant</h2>
+
+<p>Klarna's long game is straightforward to describe, even if it's hard to execute: take 110 million customers who trust you with their shopping and turn them into full banking relationships. The card is growing at pace, with 2-3 million active cardholders in the US in just a few months. The vision from 2015 — digital financial assistant, not payments company — is finally executable because the AI to run it actually exists.</p>
+
+<p>On the question of whether Revolut or Nubank will win the US market, Siemiatkowski picked David Vélez at Nubank over Nick Storonsky at Revolut. His reasoning: Revolut is too distributed. Banking is hard, and trying to launch in Dubai, India, and everywhere else simultaneously strains bandwidth in ways that a focused competitor can exploit. Nubank's base in Brazil is generating real money; the US is one more market, not the twelfth. Focus is the advantage.</p>
+
+<p>On Klarna's own positioning, he's clear about where the data moat comes from. Unlike Revolut or a standard bank, Klarna runs its own payments rails. Every transaction carries not just an amount but the full digital receipt — the exact products purchased at Sephora, not just the dollar total. That transaction-level purchase data is what makes a genuinely useful financial assistant possible. If you know someone bought expensive contact lenses, you can tell them where to get them cheaper. No one else in the stack has that data.</p>
+
+<h2>On Claude, OpenAI, and What You Want From AI</h2>
+
+<p>Siemiatkowski uses both Cursor and Claude Code, switching between them based on task, and describes them as having "almost distinct personalities and skills." But his view on the divergence between Anthropic and OpenAI is more pointed. OpenAI, he argues, is becoming a consumer company optimizing for emotional connection — the "Her" product, the AI companion. Claude is his intelligent advisor, and what he values is precisely what he fears OpenAI will optimize away: the willingness to tell him he's wrong.</p>
+
+<blockquote>
+<p>"I want an AI to tell me, you're wrong, man. Don't do that. That makes no sense."</p>
+<p>— Sebastian Siemiatkowski</p>
+</blockquote>
+
+<p>He pushes Anthropic on this directly: don't build an AI that tells me I'm great. Build one that pushes back. Whether that product instinct survives as scale and consumer pressure build is, he acknowledges, an open question — but it's the right question to be asking about the trajectory of both companies.</p>
+
+<h2>The Personal Stack</h2>
+
+<p>Siemiatkowski grew up in Sweden, the son of an immigrant father who drove a cab and a mother who fed the family pancakes seven days running when money ran out. His early interpretation of his parents' conflict was that money was the problem; fix money, fix everything. That theory drove him to Richard Branson and Ingvar Kamprad, then to a school pizzeria that out-competed the cafeteria, then to the conviction that a bank was the ultimate business to build. Twenty years later he's running one of the largest fintechs in the world, and the conviction hasn't changed — it's just better supported by evidence.</p>
+
+<p>When Klarna's valuation collapsed from $46 billion to $6.5 billion and he had to do layoffs, he went on MSNBC and got hammered by a host who essentially declared the company finished. He drove to the office afterward with Queen's "Under Pressure" on maximum volume. His way of handling it: reframe it as the Champions League final. This is the level of pressure you signed up to play at. Zlatan Ibrahimović, who shares his birthday, went into those stadiums knowing it would be terrifying and went anyway. That's the deal you make when you choose to play at that level.</p>
+
+<p>The detail that captures his operating style best might be the story of how Klarna got Michael Moritz on the board. A Sequoia partner came to Stockholm alone, gave a pitch about Klarna being the next Google, and was about to leave when Siemiatkowski said: if we're genuinely the next Google, how come you're the only one from the partnership who came? Twenty seconds after the partner got in the elevator, Moritz called directly to promise he'd join the board personally if the deal got done. Siemiatkowski calls it "being a little bit cocky and not being so freaking Swedish." It's also just good negotiating.</p>
+
+<hr>
+
+<h2>What To Do With This</h2>
+
+<ul>
+<li><strong>Audit your SaaS stack for switching cost risk.</strong> If agents can migrate data between tools with minimal friction — which Siemiatkowski argues is coming fast — any competitive advantage built on customer lock-in is eroding. Understand now which of your tools' moats are data-model moats vs. genuine product moats.</li>
+
+<li><strong>Tie AI efficiency gains explicitly to employee compensation.</strong> Klarna grew per-head comp ~50% as headcount shrank. This isn't just ethical — it's the mechanism that keeps talent engaged through transformation and prevents the silent attrition of your best people. Model the math before you announce a restructuring, not after.</li>
+
+<li><strong>Build AI systems that can read your source code, not just your documentation.</strong> Documentation is always wrong or stale. If you want AI agents to answer questions that require real understanding of how your systems work, they need access to the actual code. Design your AI infrastructure accordingly.</li>
+
+<li><strong>Apply Wikipedia's "no new article without a search first" principle to your codebase.</strong> Before writing new code, require checking whether the functionality already exists. This simple discipline — enforced by process or AI tooling — attacks the duplication problem Siemiatkowski identifies as the core cause of enterprise data sprawl.</li>
+
+<li><strong>Try building something with Claude Code or Cursor before evaluating AI companies.</strong> Siemiatkowski's direct advice to VCs: if you haven't actually used these tools to build something, you don't have the skill set to evaluate AI investments. The capability gap between someone who has done this and someone who hasn't is enormous and widening.</li>
+
+<li><strong>Separate your AI strategy into compression use cases vs. generation use cases.</strong> Enterprise data compression (reducing redundancy, consolidating sources of truth) and consumer content generation have opposite compute trajectories. Your infrastructure and cost model should reflect which category your use case falls into.</li>
+
+<li><strong>Watch switching-cost erosion as the real SaaS threat, not vibe-coding.</strong> The debate about whether enterprises will build their own tools misses the point. The actual risk to Salesforce, ServiceNow, and ERPs is data portability enabled by agents — not internal vibe-coding. That's the metric worth tracking: how hard is it for a customer to leave?</li>
+
+<li><strong>Hire your most passionate customers as part-time support staff.</strong> Klarna's Uber-model for customer service — recruiting actual customers to handle support on a flexible basis — produces NPS scores that contract agents can't match. The people who already love your product will explain it better than anyone you can train.</li>
+
+<li><strong>If you're building AI tools for enterprise, orient toward being an "intelligent advisor" not a pleaser.</strong> The enterprise users who will pay most are those who want an AI that challenges their assumptions, not one that validates them. Design feedback loops that preserve critical pushback even as consumer products optimize for satisfaction.</li>
+</ul>
+
+<h2>Lines Worth Keeping</h2>
+
+<blockquote>
+<p>"We used to be over 7,000 people, and we're now less than 3,000. And I didn't ask for a single dime to do all this."</p>
+<p>— Sebastian Siemiatkowski</p>
+</blockquote>
+
+<blockquote>
+<p>"The next thing that's going to hit everyone bad is the switching cost of data."</p>
+<p>— Sebastian Siemiatkowski</p>
+</blockquote>
+
+<blockquote>
+<p>"I want an AI to tell me, you're wrong, man. Don't do that. That makes no sense. I feel currently, it's more likely that Claude provides me less biased — it's trying less to please me."</p>
+<p>— Sebastian Siemiatkowski</p>
+</blockquote>
+
+<blockquote>
+<p>"You can take the whole freaking internet, all human knowledge, and compress it down to a few hundred gigabytes. The amount of true novel information and knowledge in human society is quite limited. What we see is repetitions and variations on the same themes, over and over and over again."</p>
+<p>— Sebastian Siemiatkowski</p>
+</blockquote>
+
+<blockquote>
+<p>"Wikipedia, where is the new button? There is none. You have to search for an article. And if you search for something that doesn't exist, then you're allowed to create new. That's so different. And companies don't work like that."</p>
+<p>— Sebastian Siemiatkowski</p>
+</blockquote>
+
+<blockquote>
+<p>"This is what I signed up for. It is stressful. It was hard as hell. But this is what I wanted. I wanted to play in this level of league."</p>
+<p>— Sebastian Siemiatkowski</p>
+</blockquote>
+
+<blockquote>
+<p>"If I'm being so big, I'm such a big consumer brand, I'm going to start looking at my KPIs and optimize for emotional connection — for people wanting to spend time with my product. Is that really going to be a ChatGPT, or is that going to be a companion product? Claude to me is very different. Claude is like my intelligent advisor."</p>
+<p>— Sebastian Siemiatkowski</p>
+</blockquote>

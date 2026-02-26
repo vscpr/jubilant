@@ -1,0 +1,163 @@
+<h2>The Sorcerer's Apprentice Has a Fleet of Agents</h2>
+
+<p>There is a textbook from 1980 that begins with a metaphor. <em>Structure and Interpretation of Computer Programs</em> — known in MIT circles as the Wizard Book — describes programmers as sorcerers. Programming languages are incantations. The challenge has always been: what spell do you need to cast to make the machine do what you want?</p>
+
+<p>Sherwin Wu, Head of Engineering for OpenAI's API and Developer Platform, read that book in college. He has been thinking about its metaphor ever since. "It literally feels like we're wizards now," he says. "It feels like we're closer to making it feel like this magical experience where we're casting all these spells and having software do all these things for you."</p>
+
+<p>But Wu is careful about which part of the Fantasia film he invokes. He does not picture the grand sorcerer. He pictures Mickey Mouse — the Sorcerer's Apprentice — who finds the master's hat, sets the brooms off on tasks, then goes to sleep. "That's vibe coding at its greatest," Wu says. "And then eventually the old sorcerer comes back and cleans everything up." The point is not that AI coding tools are dangerous. The point is that they are extraordinarily high-leverage, and leverage without judgment is how floods happen.</p>
+
+<p>That tension — between the power of the tools and the discipline required to wield them — runs through everything Wu believes about the current moment in software development. At OpenAI, 95% of engineers use Codex daily. 100% of pull requests are reviewed by Codex. Engineers who lean into the tool open 70% more PRs than those who don't, and the gap is growing. By Wu's estimate, the vast majority of code that ships at OpenAI was authored by AI. And yet his message is not one of triumphalism. It is something more like: <em>pay attention to what you're doing.</em></p>
+
+<h2>Engineers Are Becoming Tech Leads</h2>
+
+<p>The job of a software engineer has transformed faster than almost any other profession in recent memory. Wu does not know what job has changed more in the past two years. The role has shifted from writing code to managing agents — reviewing, steering, and providing feedback across 10 to 20 parallel Codex threads at a time.</p>
+
+<p>"Engineers are becoming tech leads," Wu says. "They're basically like managers now. They're managing fleets and fleets of agents."</p>
+
+<p>This is not purely additive change. It requires a different kind of expertise. The skill that matters now is knowing what to delegate and what to check, when to trust the output and when to dig in. Wu draws on another book here — Frederick Brooks's <em>The Mythical Man-Month</em>, written in the 1970s — which predicted that software engineering would eventually resemble a surgery room: one person doing the critical work, supported by everyone else in the room. "I want to empower them, make them feel like they're a surgeon," Wu says of his management philosophy. "Looking around corners and unblocking people, especially from an organizational perspective, is extremely, extremely useful."</p>
+
+<p>His management approach has stayed largely stable through the AI transition: spend more than 50% of your time with your top 10% performers, make sure they are unblocked and heard, then let their output raise everyone around them. In an AI-accelerated environment, this principle becomes even more important. The top performers are the ones who learn the tools fastest, develop best practices, and propagate knowledge across the organization. "Just like as a manager, I'm like, yeah, go explore this," Wu says of the team running a 100% Codex-written codebase. "Whatever best practices come out of this, we have to share with the org."</p>
+
+<p>He also sees a coming change in management span. Just as engineers now manage 20 Codex threads, people managers will manage much larger teams — well beyond the current best practice of 6 to 8 reports — because tools like ChatGPT, connected to Notion, Slack, and GitHub, allow managers to maintain organizational context at a scale previously impossible. "There are some teams where their EM is managing quite a few people and they're doing it pretty adeptly because of some of these tools," Wu says.</p>
+
+<h2>The 100% Codex Codebase Experiment</h2>
+
+<p>Inside OpenAI, one team is running an experiment with no escape hatch. They maintain a codebase written entirely by Codex. No switching to tab-completion or Cursor when the agent gets stuck. No rolling up your sleeves to fix it manually. If the agent cannot do it, the problem is to figure out why the agent cannot do it.</p>
+
+<p>The learnings are substantial. When Codex fails to do what you want, the root cause is almost always context. "It's either under-specified or there's just not enough information around how to do something available to the agent," Wu says. The solution is not to abandon the agent but to encode more tribal knowledge into the repository itself — through code comments, code structure, markdown files, skills files, anything that gives the model better information to work with.</p>
+
+<p>This reframes the problem entirely. The bottleneck is not the model's capability. The bottleneck is the information environment the model operates in. Engineers who understand this stop asking "why won't the agent do this?" and start asking "what does the agent need to know to do this?"</p>
+
+<p>Wu describes the other psychological dimension of this experiment: the stress of agents not working as expected. "I've been hearing more and more there's this stress people feel when their agents aren't working," he says. Engineers who have always had the escape hatch of just writing the code themselves are now confronting what it means to work exclusively through delegation. It is a different cognitive mode. And it is, Wu believes, where the entire profession is heading.</p>
+
+<h2>The Models Will Eat Your Scaffolding for Breakfast</h2>
+
+<p>One of Wu's most important observations about the AI industry is also one of its most uncomfortable: listening too closely to customers is not always the right strategy. In a normal industry, this would be heresy. In AI, it is almost a survival principle.</p>
+
+<p>"The field and the models themselves are just changing so, so quickly," Wu says. "They tend to disrupt themselves."</p>
+
+<p>The phrase he keeps returning to comes from Nicolas, founder of FinTool: <em>the models will eat your scaffolding for breakfast.</em> In 2022, when ChatGPT launched, the models were raw. The developer ecosystem responded by building elaborate scaffolding — agent frameworks, vector stores, complex orchestration layers — to compensate for model limitations. Those limitations then disappeared, and much of the scaffolding became unnecessary.</p>
+
+<p>"If you rewind back to 2022, there was all this product scaffolding to basically try and steer the model and build a framework around it to get it to do what you want," Wu says. "As you've seen the field play out, the models have just changed so much and gotten so much better that they ended up literally eating some of the scaffolding."</p>
+
+<p>Vector stores are the clearest example. In 2023, vectorizing an entire corpus and optimizing retrieval felt like the essential pattern for bringing organizational context into models. Today, the better approach is to give the model search tools and let it reason — a much simpler architecture that produces better results. The entire ecosystem that had formed around the old approach became, in Wu's word, a local maximum.</p>
+
+<p>The implication for builders is significant. If you listen only to what customers say they want right now — a better vector store, a more robust agent framework — you will build something excellent for where the models are today. You will not build something excellent for where the models are going. And because the models are moving very quickly, "today" is a dangerous place to optimize for.</p>
+
+<p>"My general advice, and I've been giving this to people for a while and I think it's still true today," Wu says, "is make sure you're building for where the models are going and not where they are today." He has watched startups build products for capabilities the models could do at 80% — products that worked but felt almost-there. Then the models improved, and those products became exceptional. Building ahead of the curve requires accepting some friction and some wait time. Given the pace of model improvement, the wait is often short.</p>
+
+<p>Wu is candid that OpenAI's own API team has made this mistake. "We kind of took some left and right turns when we shouldn't have," he says. "But yeah, the models still end up — models get better, and we're all learning the bitter lesson day in and day out." The reference is to the famous "bitter lesson" from AI research: adding human-designed scaffolding and logic tends to lose in the long run to systems that simply let models scale and learn on their own.</p>
+
+<h2>The Second and Third Order Effects Nobody Is Pricing In</h2>
+
+<p>The idea of the one-person billion-dollar startup has become a kind of ambient meme in AI circles — a vision of what extreme individual leverage looks like at the limit. Wu finds the concept compelling, but he is more interested in what it implies for the economy around it.</p>
+
+<p>"I think people aren't really pricing in the second or third order effects of this," he says.</p>
+
+<p>If one person can run a billion-dollar company, it also means it is far easier to run companies of any size. Wu's prediction: a massive explosion in startups, particularly vertical B2B SaaS. "To enable a one-person billion-dollar startup, there might be 100 other small startups building bespoke software that works extremely well to support other types of small one-person billion-dollar startups." The one-person newsletter or podcast that might become a large business does not need to solve support infrastructure internally. A small startup will build software specifically for that problem, priced for a small team, written by AI in a fraction of the time it once would have taken.</p>
+
+<p>"There might be like 100 million-dollar startups. There might be tens of thousands of 10-million-dollar startups," Wu says. "And as an individual, it's actually pretty great to have a 10-million-dollar business. That's like enough for yourself for life at that point."</p>
+
+<p>The further-order effects are harder to predict but worth thinking about. Wu sketches a world where VC economics shift: if more value accrues to 10- to 50-million-dollar companies rather than the venture-scale giants that deliver 100x returns, the structure of the funding ecosystem changes with it. The high-agency individual who builds a highly profitable micro-company is well-served by this world. The fund manager seeking billion-dollar outcomes has a harder time.</p>
+
+<p>The deeper point is about distribution. In a world full of startups, each fighting for attention, having an existing audience and platform becomes an extraordinary moat. "Distribution becomes increasingly important because there are so many things trying to get your attention," Wu observes.</p>
+
+<h2>The Negative ROI Deployment Problem</h2>
+
+<p>Wu has a vantage point that almost no one else does: he talks to essentially every AI company and enterprise deploying AI at scale. His observation about a large fraction of AI deployments is bracing. "I would not be surprised if a lot of AI deployments are actually negative ROI," he says.</p>
+
+<p>The diagnosis is not about model capability. It is about adoption dynamics. "We in Silicon Valley just forget that we live in a bubble," Wu says. "We are so — Twitter is a bubble, X is a bubble, Silicon Valley is a bubble, software engineering is a bubble. Most people in the world are not software engineers, are not very AI-pilled, are not following every single model release."</p>
+
+<p>When Wu talks to employees at companies deploying AI outside of tech, he finds something striking: "It's like the most basic thing that they're trying to do. They have very little understanding of exactly how this technology works. They're asking very simple questions of these things. They're really not pushing it just yet."</p>
+
+<p>The failure mode he sees most often is deployment that is purely top-down. C-suite buys the tools, issues the mandate, adds AI usage to performance reviews. Employees are told to use the tools but have no community of practice around them, no examples, no one to learn from. "They're like, I know I'm supposed to use this, and maybe it's on my performance review too, but I'm not sure what to do," Wu says. "They look around, no one else is doing it, there's no one else to learn from."</p>
+
+<p>His recommendation is specific: find the people who are most genuinely excited about AI — often technical-adjacent roles, not software engineers, since most companies don't have software engineers — and build them into an internal tiger team. Let them explore the full range of capabilities, apply them to specific workflows, and then teach everyone else. "Find the high performers in AI adoption and empower them, let them build hackathons, let them hold seminars, do knowledge sharing, create the seeds of excitement internally."</p>
+
+<p>The absence of this bottoms-up layer is why top-down mandates fail. The last-mile intricacies of any job — support, operations, finance, sales — are too specific and varied to be solved centrally. The people who actually do that work have to discover how AI fits into it themselves, learn from each other, and build institutional knowledge. Without that, the tools sit idle.</p>
+
+<h2>The Underrated Opportunity: Business Process Automation</h2>
+
+<p>Wu is openly bullish on a category that barely registers in most AI discourse: business process automation. Not the open-ended, creative work of software engineering. Not data science. The repeatable, deterministic, procedure-driven work that makes up the majority of economic activity.</p>
+
+<p>"If you talk to any company that's not a tech company, there's a lot of business processes," Wu says. "Repeatable operations that some manager has iterated on. There's usually a standard operating procedure. You don't want to deviate from it that much."</p>
+
+<p>This is the work that runs utilities, manages support lines, handles compliance, processes claims, and coordinates operations across large organizations. It is work where the goal is not ingenuity but consistency. Wu believes AI is extraordinarily well-suited to it, and that the opportunity is substantially larger than people recognize. "It's bigger than you would think it is based off of how people talk about it or don't talk about it on X."</p>
+
+<p>The undervaluation comes from the same bubble problem: people talking about AI are mostly software engineers and AI researchers, for whom open-ended knowledge work is the norm. Business process work looks boring from that vantage point. It is not boring; it is where enormous amounts of labor hours go.</p>
+
+<h2>Where the Models Are Going: Multi-Hour Tasks and Native Audio</h2>
+
+<p>Wu is most excited about two directions for model capability over the next 12 to 18 months.</p>
+
+<p>The first is the extension of coherent task duration. Current coding tools are optimized for tasks that take minutes, maybe up to 10 minutes. Models can sometimes be pushed to multi-hour tasks, but that is the exception. Wu believes that within 12 to 18 months, models could handle multi-hour tasks reliably — and eventually six-hour or day-long autonomous work. "The types of products you build around that will look very different," he says. Products today assume human interaction and short loops. Products for agents that work independently for hours require different feedback mechanisms, different trust architectures, different user interfaces.</p>
+
+<p>The second is audio. "We're talking in audio. A lot of the world's business is done via audio. A lot of services and operations are done via talking in audio." Native multimodal speech-to-speech models are improving rapidly, and Wu believes audio is a substantially underrated domain — particularly for enterprise and business settings where voice interaction is the default.</p>
+
+<h2>OpenAI's Platform Commitment and What Builders Should Know</h2>
+
+<p>Wu is direct about a question every startup building on OpenAI's API worries about: when will OpenAI ship something that kills their business?</p>
+
+<p>"The market is so big and so massive," he says. "I've talked to a lot of startups that have not worked out, startups that are doing really well. Every startup that I've seen that has kind of fizzled out is not because OpenAI or a big lab has come to squash them. It's because they built something and it really didn't resonate with customers. Whereas the ones that take off — even in very competitive spaces like coding — it's because they built something that people really love."</p>
+
+<p>The platform commitment runs deep at OpenAI, in Wu's telling, rooted in the original mission. OpenAI cannot reach all of humanity directly — ChatGPT notwithstanding. The API exists because the only way to extend benefit everywhere is to enable others to build. "We don't think we, as a company, will be able to reach all of humanity," Wu says. "In order for us to fulfill our mission, we need to have some platform-style thing here, where we can empower other people to build."</p>
+
+<p>The API stack today offers three levels of abstraction. At the base is the Responses API — low-level, unopinionated, optimized for long-running agent tasks. Above that is the Agents SDK, which provides scaffolding for building multi-agent systems with guardrails and orchestration. Above that are Agent Kit widgets for UI components and an evals API for quantitative testing of agents and workflows. The full stack lets a developer ship an agent quickly. Going low in the stack lets them build whatever they want.</p>
+
+<p>Wu's closing message is less technical than it is existential. "I entered the workforce in 2014. I felt like there was a period of five to six years where it wasn't very exciting in tech. And then in the last three years it's just been the most insanely exciting, energizing period of my career." He is asking people not to let it pass by. Not to be paralyzed by the noise, and not to mistake the noise for the substance. "You don't need to know all of that to really engage with what's happening right now. Even something as simple as just install Codex or Claude and play around with it." This is the worst the models will ever be. The next two to three years will be some of the most interesting in the history of the industry. Pay attention. Participate. Don't go to sleep like the Sorcerer's Apprentice and let the brooms run wild — but don't sit on the sidelines either.</p>
+
+<h2>What To Do With This</h2>
+
+<ul>
+<li><strong>Build for where models are going, not where they are today.</strong> Find capabilities the models can do at 80% right now and build for the full version — your product will become excellent faster than you think as models improve.</li>
+<li><strong>Stop treating agent failures as model problems; treat them as context problems.</strong> When Codex or any coding agent fails to do what you want, the root cause is almost always missing or underspecified information — encode tribal knowledge into CLAUDE.md, skills files, code comments, and structured documentation inside the repository.</li>
+<li><strong>If you are deploying AI in an organization, build a bottoms-up tiger team first.</strong> Find the 2-3 people most excited about AI (often technical-adjacent, not engineers), give them dedicated time to explore and build best practices, and have them run seminars and hackathons — top-down mandates alone reliably fail.</li>
+<li><strong>As an engineering manager, spend more than 50% of your 1:1 time with your top 10% performers.</strong> In an AI-accelerated environment, top performers compound fastest — unblocking them has disproportionate impact on team output and knowledge transfer.</li>
+<li><strong>Use ChatGPT with organizational data (Notion, Slack, GitHub) to anticipate blockers before they happen.</strong> Ask the model: "What are the active blockers on my team? What do you anticipate will block this engineer next month?" — this turns organizational context into proactive management.</li>
+<li><strong>Have Codex review 100% of PRs before human review.</strong> The workflow — AI writes code, AI reviews code, human does a lighter pass — compresses code review from 10-15 minutes to 2-3 minutes and removes the most annoying parts of the process.</li>
+<li><strong>Look seriously at business process automation, not just knowledge work.</strong> Repeatable, deterministic, procedure-driven work is a massive underserved opportunity — model it, document the standard operating procedure, then test AI on the workflow.</li>
+<li><strong>Start small and specific rather than trying to track every AI development.</strong> Install one tool (Codex, Claude) and connect ChatGPT to two or three internal data sources (Notion, GitHub, Slack) — this alone puts you ahead of most people in most organizations.</li>
+<li><strong>When evaluating a vertical B2B SaaS idea, do not rule it out because it seems too niche.</strong> Wu's thesis is that the collapsing cost of software creation will produce tens of thousands of 10-million-dollar businesses — deeply bespoke software for narrow use cases is newly viable at scale.</li>
+</ul>
+
+<h2>Lines Worth Keeping</h2>
+
+<blockquote>
+"The models will eat your scaffolding for breakfast."
+<p>— Nicolas, founder of FinTool (quoted by Sherwin Wu)</p>
+</blockquote>
+
+<blockquote>
+"Make sure you're building for where the models are going and not where they are today. You end up building a better product. You may need to wait a little bit, but the models are getting so much better so quickly, you often don't need to wait that long."
+<p>— Sherwin Wu</p>
+</blockquote>
+
+<blockquote>
+"There's a quote from Kevin Weil, our VP of Science here. He likes saying: this is the worst the models will ever be."
+<p>— Sherwin Wu</p>
+</blockquote>
+
+<blockquote>
+"For engineers, I don't know what job has changed more in the past couple of years. We're just like the job of an engineer is so different — in the entire lifespan of an engineer, in the past couple of years, it's now shifted to: I don't write any more code."
+<p>— Sherwin Wu</p>
+</blockquote>
+
+<blockquote>
+"A lot of the time, when the coding agent is not doing what you want, it's usually a problem with context and just information that you've given it. It's either under-specified or there's just not enough information around how to do something available to the agent."
+<p>— Sherwin Wu</p>
+</blockquote>
+
+<blockquote>
+"I would not be surprised if a lot of AI deployments are actually negative ROI. Part of this is I think there's also general sentiment from folks around the country — basically outside of tech — that AI is being forced onto them."
+<p>— Sherwin Wu</p>
+</blockquote>
+
+<blockquote>
+"Every startup that I've seen that has kind of fizzled out is not because OpenAI or a big lab has come to squash them. It's because they built something and it really didn't resonate with the customers."
+<p>— Sherwin Wu</p>
+</blockquote>
+
+<blockquote>
+"We're all learning the bitter lesson day in and day out."
+<p>— Sherwin Wu</p>
+</blockquote>

@@ -1,0 +1,130 @@
+<h2>The Engineer Who Builds His Own Tools</h2>
+
+<p>Most developers using AI coding assistants are consumers. They open a chat window, describe what they want, and accept whatever comes back. CJ Hess, a software engineer at Tenex, has taken a different approach: he treats his AI workflow as a software project in its own right — one worth designing, iterating on, and continuously shipping improvements to. The result is a personalized engineering environment that grows more capable the more he uses it, and a philosophy about how serious developers should think about AI tooling that deserves close attention.</p>
+
+<p>The core of CJ's thesis is simple but counterintuitive in an era dominated by SaaS: when you are capable of building something yourself, and the thing you need is a developer tool, you almost certainly should build it. "I used to be when I ran these big product and engineering orgs, they used to ask me build versus buy," he told host Claire Vo on the <em>How I AI</em> podcast. "And I was like, oh my God, please just buy it. Let's not waste our time. And now I've flipped to, of course, we should build this. Until we hit some constraint, we should build it."</p>
+
+<p>That flip is not ideological. It is economic and practical. The cost of spinning up a working V1 of a custom tool has collapsed to the point where the evaluation overhead of finding, procuring, and configuring a third-party solution now exceeds the cost of building. This is especially true for developer tooling, where the users — engineers — are already capable of forking, extending, and maintaining what they build.</p>
+
+<h2>Why Claude Code, and Why It Matters That It Feels Steerable</h2>
+
+<p>CJ has been using Claude Code since roughly May of the prior year, well before Anthropic's Opus 3.5 became a watershed moment for many developers. His reason for sticking with it over alternatives like Cursor or OpenAI's Codex is not primarily about raw model capability. He's candid that GPT-4.1 / GPT-5 may edge out Claude on pure intelligence benchmarks. What keeps him in Claude Code is something harder to quantify: <strong>intent understanding</strong>.</p>
+
+<p>"When I want it to dig deep, it just does it," he explained. "It feels like it picks up on my intuition just in the prompts." This steerability — the sense that the model is attending to what you actually want rather than what you literally said — turns out to matter enormously in an agentic loop where you are not reviewing every line the model writes. A model that consistently undershoots or overshoots your intent creates correction overhead that compounds across a session. A model that reliably interprets intent correctly compounds in the other direction.</p>
+
+<p>The practical consequence is that CJ has built an ecosystem of custom skills and tools around Claude Code that assume a high baseline of intent understanding. Those tools would be much harder to maintain if he had to over-specify every instruction to compensate for a model that needed more hand-holding.</p>
+
+<h2>Skills as Living Documentation</h2>
+
+<p>The foundational concept in CJ's workflow is the <strong>skill</strong> — a Markdown file that gives Claude structured instructions for performing a specific task. Skills are not exotic. They are just documentation, written for an AI audience rather than a human one. But the way CJ manages them reveals a mature philosophy about how to work with AI systems over time.</p>
+
+<p>The key insight is that skills are living artifacts. They are not written once and filed away. They evolve in response to failures. When Claude produces a bad output while using a skill — wrong colors, misaligned shapes, violated spacing rules — CJ treats that as a feedback signal and updates the skill. "If I'm working with this and something goes wrong, I would essentially hop into the place where I have these skills and say, here's what happened, give me a suggestion on how to improve this skill so this doesn't happen again."</p>
+
+<p>This loop — use the skill, observe the failure, update the skill — is how he has progressively encoded his own preferences and domain knowledge into Claude's behavior without touching the underlying model. The skill becomes a repository of hard-won heuristics, a form of institutional memory that makes Claude increasingly good at the specific things CJ needs it to do.</p>
+
+<p>He also has a meta-skill: a skill for writing skills. This closes the loop further, letting Claude help maintain the very system through which CJ controls Claude. "There's docs for people and there's docs for agents," he noted, "and those just end up being skills."</p>
+
+<p>The structure he recommends for a well-formed skill includes: a clear purpose and name, a quickstart section, a schema or template defining the operating framework, customization options, and concrete examples of what good output looks like. Pre-flight checks — a list of requirements that must be satisfied before the skill executes — are valuable for workflows like Git operations where doing the wrong thing at the wrong time has real consequences.</p>
+
+<h2>Flowy: From ASCII Frustration to a Self-Built Visual Planning Tool</h2>
+
+<p>The most concrete expression of CJ's build-your-own philosophy is <strong>Flowy</strong>, a planning and visualization tool he built for himself using Claude Code — a tool designed to make working with Claude Code better. The meta-circularity is intentional.</p>
+
+<p>The origin story starts with a legitimate pain point. CJ, like many developers, had adopted the practice of iterating on plans in Markdown before writing any code. This works well as a discipline. But Markdown plans have a representation problem: when Claude generates ASCII flowcharts and diagrams to illustrate system behavior, they are technically correct but cognitively expensive to read. "I really hate staring at these ASCII diagrams," he said. Mermaid diagrams were an improvement but still felt like a constraint — you are limited to what Mermaid knows how to render, and extending it requires going outside your own system.</p>
+
+<p>Flowy solves this by giving Claude a JSON-based schema for describing flowcharts and UI mockups, then rendering those JSON files as visual diagrams in a browser-based editor. Claude writes JSON. Flowy renders visuals. The human reads visuals and edits them directly in the interface, which writes back to the JSON file. Claude reads the updated JSON. This creates a shared substrate — code, specifically JSON — through which human and AI can communicate about visual design without either party needing to parse the other's native format.</p>
+
+<p>"It's almost like I want to see it visually and Claude wants to see it as Markdown," CJ observed, "so we can kind of speak in our own way."</p>
+
+<p>The Flowy editor functions as a primitive Figma or Excalidraw — drag boxes around, add notes, change timing parameters — with the key difference that every edit persists to a file that Claude can read natively. Want to change an animation from three seconds to four? Edit the timing node in Flowy, drop a note, point Claude back at the file. The human-to-AI handoff becomes seamless because the artifact they are collaborating on is a file, not a screenshot or a verbal description.</p>
+
+<p>Flowy also handles UI mockups at a level of fidelity between wireframe and comp — enough to communicate layout intent and state variations without requiring design tooling. CJ demonstrated this live: asked Claude to plan a spinning wheel feature for a tips-and-tricks screen, Claude used the Flowy flowchart skill to generate an animation timing sequence diagram and a user flow diagram, then used the Flowy UI mockup skill to generate mockups of the multiple states (idle, spinning, result revealed). The entire visual planning phase took minutes. The subsequent build — kicked off with a prompt as short as "based on the flow charts and the mock ups, build this feature" — produced working code that matched the mocks closely on the first pass.</p>
+
+<h2>The Multi-Model Review Workflow</h2>
+
+<p>One of the more distinctive elements of CJ's practice is using a second AI model — specifically OpenAI's Codex / GPT-4.1 — to review code that Claude has written. This is not about distrust of Claude. It is about what happens when you assign a model a different role than code generation.</p>
+
+<p>The observation that drives this workflow is that the model generating code and the model reviewing code have different failure modes. Claude, CJ finds, is sometimes too eager — it implements what you asked for, but in doing so it makes local decisions that are inconsistent with the broader architecture, duplicates logic that already exists elsewhere, or reaches for a pattern that works but does not fit the codebase as cleanly as an alternative would. Codex, in his experience, is less impressive at writing code from scratch but performs well as a staff-engineer-style reviewer: it reads the diff with fresh eyes and surfaces architectural issues that the author — human or AI — is too close to see.</p>
+
+<p>His review prompt has four buckets: First, does the code accurately reflect the plan or diagram artifacts? Second, are there any general code smells? Third, if you were to refactor this with a different approach, what would improve the codebase overall? The fourth, implicit bucket is catching the vibe-coding anti-patterns: the proliferation of duplicate utility functions, the useEffect callback that should not be there, the component that grew too large because it was easier to keep adding than to restructure.</p>
+
+<p>"Codex is like a really good curmudgeonly staff engineer that will look at your code and tell you what's wrong with it," he said. The live demonstration bore this out: Codex flagged an angular mismatch between the spinner wheel's rotation logic and the dot positions, meaning the arrow was landing between tips rather than on them — a subtle bug that neither CJ nor Claude had caught and that would have been annoying to debug after the fact.</p>
+
+<p>The broader principle here is <strong>model-to-model evaluation</strong> as a quality gate. Different models have different priors and different blind spots. Running your output through a second model that has not been immersed in your codebase and your session context adds a form of independence to the review that a human skimming the diff might not provide.</p>
+
+<h2>Running Dangerously (With Guardrails)</h2>
+
+<p>CJ operates Claude Code in bypassed-permissions mode — what he calls "Kevin mode" — as his default. He has named different permission configurations as shell aliases, so the level of autonomy granted to Claude is a one-word command. This is not recklessness. It reflects a considered position about where the real guardrails should live.</p>
+
+<p>His reasoning: for solo projects or well-defined team projects with proper Git hygiene, the version control system is the safety net. If Claude does something wrong, you revert. The overhead of confirmation prompts on every tool use slows the agentic loop significantly without providing commensurate protection. The times he still does things by hand — like crafting a PR — are handled by skills that run preflight checks before pushing anything upstream.</p>
+
+<p>He also sketched a near-future pattern he finds genuinely interesting: <strong>on-demand software</strong>. The idea is that rather than building a permanent tool like Flowy, an AI agent could spin up a throwaway visualization app mid-session — "we're not on the same page, I just added an app for you to visualize this, go to this URL and look at it, does this look right, and then we'll just delete that app." The collaborative artifact becomes ephemeral, generated on demand, discarded when it has served its purpose.</p>
+
+<h2>The Shifting Economics of Build vs. Buy</h2>
+
+<p>Running through the entire conversation is a quiet argument about the economics of software tooling in the AI era. CJ and Claire both articulated versions of the same observation: the cost curve for building custom tools has shifted so dramatically that the build-vs-buy decision now defaults to build for a much wider class of problems than it did even two years ago.</p>
+
+<p>This is not purely about the tools being cheaper to build. It is also about the quality ceiling. When you build your own tool, you control the roadmap. When Flowy needs a new feature, CJ ships it. When the skill needs updating to account for the new feature, he updates it. The tool and its documentation evolve together, in lockstep, guided by the actual use cases CJ encounters in production. No third-party product manager will ever prioritize the exact capability you need at the exact moment you need it. Your own build will, because you are both the user and the developer.</p>
+
+<p>Claire, who spent years in traditional product and engineering leadership, put the historical contrast plainly: in the old workflow, a product manager would spend days creating wireframes and user flows, hand them to an engineer, and then wait for a sprint slot, prioritization, and eventually the code. Now the planning artifacts and the implementation are generated in the same session, by the same agent, guided by the same person who had the original idea. The cognitive overhead has not disappeared — the thinking still has to happen — but the execution latency has collapsed to near zero.</p>
+
+<p>For developers willing to invest in building their own tooling ecosystem, the compounding returns are significant. Each skill you write, each custom tool you build, makes the next session faster and more reliable. The developer who spends time on this infrastructure gradually builds an advantage over the developer who does not — not because they have access to a better model, but because they have built a better harness around the same model.</p>
+
+<hr>
+
+<h2>What To Do With This</h2>
+
+<ul>
+  <li><strong>Name your Claude Code permission aliases clearly.</strong> Set up shell aliases for different permission levels (e.g., a "safe" mode and a "full autonomy" mode). Switching between them with a single word removes the friction that causes you to either over-restrict or inconsistently grant permissions mid-session.</li>
+  <li><strong>Treat your skills as living documentation, not static files.</strong> Every time a skill produces a bad output, treat it as a feedback event: describe what went wrong and ask Claude to suggest an improvement to the skill. After a few iterations, the skill encodes your preferences in a way that survives across sessions and projects.</li>
+  <li><strong>Build a meta-skill for writing skills.</strong> Create a Claude skill whose purpose is to generate and update other skills. Point it at the code or behavior you want Claude to understand, and have it produce a structured skill file with purpose, quickstart, schema, customization, and examples. This removes the blank-page problem for new skill creation.</li>
+  <li><strong>Add pre-flight check sections to skills for irreversible actions.</strong> For skills that touch Git, deploy pipelines, or any other action that is hard to undo, add an explicit pre-flight section listing required conditions. This prevents Claude from proceeding when the environment is in an unexpected state.</li>
+  <li><strong>Use a second model as a code reviewer, not a code generator.</strong> After completing a feature with Claude, prompt Codex or another model to review the Git diff against four criteria: accuracy to the plan/diagrams, code smells, refactoring opportunities, and architectural consistency. Pass the review findings back to Claude (or let Codex implement them directly) before committing.</li>
+  <li><strong>Build your own visual planning tool or adopt a JSON-based diagram format.</strong> The key insight from Flowy is not the specific tool — it is that having a shared file format Claude can read and write, and a human can view and edit visually, eliminates the translation layer between planning and implementation. Even a simple approach (a JSON schema for flowcharts rendered by an open-source library) delivers most of the benefit.</li>
+  <li><strong>Skip plan mode when you have sufficient diagram artifacts.</strong> Once you have a flow diagram and UI mockups that accurately represent the feature, "based on the flow charts and mockups, build this feature" is often a sufficient prompt. Plan mode re-generates what the diagrams already encode; skip it and trust the artifacts.</li>
+  <li><strong>Use the "code as spec, then rebuild clean" pattern for exploratory development.</strong> If you have vibe-coded your way to a working but messy implementation, prompt Claude: "This is reference code. Write me a plan to re-implement this cleanly, then build it." The working prototype serves as a precise functional specification, and the rebuild eliminates the accumulated debt.</li>
+  <li><strong>Parallelize exploration subagents at the start of a new session.</strong> When beginning work on a feature in an unfamiliar or large codebase, kick off three to five Claude subagents simultaneously to explore different parts of the codebase. This front-loads context gathering and dramatically reduces the time Claude spends with incomplete information when generating the plan or implementation.</li>
+  <li><strong>Update skill documentation as part of every feature plan for the tool the skill covers.</strong> If you are developing a tool that has associated Claude skills, include "update documentation and related skills" as an explicit step in every development plan. Skills that drift behind the code they describe produce subtle, hard-to-diagnose failures that look like model errors but are actually documentation gaps.</li>
+</ul>
+
+<h2>Lines Worth Keeping</h2>
+
+<blockquote>
+  "Working with Claude is just such a delight. It just feels so steerable. And I think the one thing it really has is intent understanding. When I want it to dig deep, it just does it."
+  <br><br>— CJ Hess
+</blockquote>
+
+<blockquote>
+  "I used to be when I ran these big product and engineering orgs, they used to ask me build versus buy. And I was like, oh my God, please just buy it. And now I've flipped to, of course, we should build this. Until we hit some constraint, we should build it."
+  <br><br>— CJ Hess
+</blockquote>
+
+<blockquote>
+  "There's docs for people and there's docs for agents and those just end up being skills."
+  <br><br>— CJ Hess
+</blockquote>
+
+<blockquote>
+  "It's almost like I want to see it visually and Claude wants to see it as Markdown, so we can kind of speak in our own way."
+  <br><br>— CJ Hess
+</blockquote>
+
+<blockquote>
+  "Codex is like a really good curmudgeonly staff engineer that will look at your code and tell you what's wrong with it."
+  <br><br>— Claire Vo
+</blockquote>
+
+<blockquote>
+  "Claude is very eager sometimes, and maybe jams things in there without thinking about the bigger picture. Codex, when it reviews, it almost always is like — you've implemented this pattern, but it fits nicely if you just rebuild this system a little bit. And that just keeps your code base away from all the vibe coding sins of having ten format-date functions all over your code."
+  <br><br>— CJ Hess
+</blockquote>
+
+<blockquote>
+  "Now you can have a totally different AI engineering workflow than your colleague sitting next to you. And it's totally fine because it's making you individually a lot more efficient and effective. And you're building them yourselves for pretty cheap."
+  <br><br>— Claire Vo
+</blockquote>
+
+<blockquote>
+  "Code is spec — now that code is so cheap to generate, you can say, generate a bunch of code, this isn't production, I'm fine throwing it away, now go build the clean version of it."
+  <br><br>— Claire Vo
+</blockquote>
