@@ -1,0 +1,127 @@
+<h2>The State of AI in 2026: A Practitioner's View</h2>
+
+<p>The conventional wisdom about who is "winning" the AI race misses the point almost entirely. Sebastian Raschka, machine learning researcher and author of <em>Build a Large Language Model from Scratch</em>, puts it bluntly: "I don't think there will be any company who is having access to a technology that no other company has access to." Researchers rotate between labs, ideas propagate through papers and hiring, and the architectures are, at their core, remarkably similar. The differentiating factor is not secret knowledge — it is budget, hardware access, and organizational culture. That framing, offered in a wide-ranging conversation on the Lex Fridman Podcast with Raschka and Nathan Lambert, post-training lead at the Allen Institute for AI and author of the definitive book on reinforcement learning from human feedback, sets the tone for one of the most grounded and technically precise roundtables on the current state of large language models.</p>
+
+<h2>China's Open-Weight Moment — and What Comes Next</h2>
+
+<p>The DeepSeek moment of January 2025 — near-frontier performance at dramatically lower reported cost — did not simply produce one impressive model. It catalyzed an entire movement within China analogous to how ChatGPT sparked a thousand chatbot startups in the US. Lambert observes that DeepSeek is already losing its crown as China's preeminent open-weight model provider: "The likes of Z.AI with their GLM models, MiniMax, Kimi Moonshot — especially in the last few months — has shown more brightly." The leapfrogging is structural, not coincidental. Each Chinese company builds on DeepSeek's architectural innovations (mixture of experts, multi-head latent attention) and the newest model is almost by definition the best model at any given moment.</p>
+
+<p>The strategic logic behind Chinese companies releasing open-weight models is explicitly practical, not idealistic. As Lambert explains, IT companies and US enterprises will not pay for API access to Chinese providers for security reasons — a long-standing pattern in enterprise tech. Open-weight models are a way to achieve distribution and influence without requiring a trust relationship. These companies are, in Lambert's reading, "very realistic about this." The Chinese open-weight models also tend to carry more permissive licenses than their American counterparts: Meta's Llama and Google's Gemma have usage caps and reporting requirements above certain user counts, while many Chinese models are released with essentially no strings attached.</p>
+
+<p>The forecast for 2026 is more open-weight models, more of them from China, with consolidation still a few years out. On the closed-model side, Lambert expects Gemini to continue making inroads against ChatGPT on the strength of Google's vertical integration — owning the hardware, the data centers, and the TPUs means Google does not pay Nvidia's margins, and that structural cost advantage compounds over time. Anthropic, meanwhile, has carved out a durable niche by betting hard on code, and Claude Code's remarkable performance relative to competing interfaces represents a real organizational alignment around a specific use case.</p>
+
+<h2>Architecture: How Much Has Actually Changed?</h2>
+
+<p>The honest answer is: not that much, and that is a feature. From GPT-2 to DeepSeek V3 to GPT-4o, the core architecture — a decoder-only transformer with an attention mechanism predicting one token at a time — has remained intact. What has changed are the knobs and tweaks: Mixture of Experts (MoE), which packs more knowledge into a model without increasing inference cost by routing each token to only a subset of "expert" feed-forward networks; Multi-Head Latent Attention, DeepSeek's compression of the key-value cache to enable efficient long contexts; Group Query Attention; and Sliding Window Attention. Raschka makes the point with characteristic precision: "You can convert one from one, you can go from one into the other by just adding these changes. It fundamentally is still the same architecture."</p>
+
+<p>The real turbulence is happening at the systems and training level. The shift from FP16 to FP8 to FP4 numerical precision means dramatically more tokens processed per second per GPU, which compounds across the entire training and serving stack. The codebases that train frontier models look nothing like the reference implementations in the Hugging Face Transformers library — they are optimized for massively distributed training across tens of thousands of GPUs, with custom parallelism strategies that have to handle hardware failures gracefully.</p>
+
+<p>Alternatives to the autoregressive transformer do exist and are getting serious investment. Text diffusion models — generating all tokens in a completion in parallel rather than one at a time — promise dramatic speed improvements and are reportedly already being used by coding startups to generate large code diffs nearly instantaneously. The limitation is tool use: any task that requires interrupting the generation process to call an external API (a code interpreter, a search engine, a database) does not map cleanly onto the diffusion paradigm. State space models like Mamba offer linear rather than quadratic scaling of the attention mechanism but have not yet displaced the transformer at the frontier. The status quo holds: for state-of-the-art performance, the autoregressive transformer remains unchallenged.</p>
+
+<h2>Scaling Laws: Bullish on All Three Axes</h2>
+
+<p>The "scaling laws are dead" discourse is, according to both Raschka and Lambert, a vibes problem rather than an empirical one. The scaling law — a predictable power-law relationship between compute and held-out prediction accuracy — has held across thirteen orders of magnitude of compute. Lambert puts the asymmetry plainly: "It's like that technical term is continuing, and then the question is like what do users get out of it."</p>
+
+<p>There are now effectively three separate scaling axes, each with its own characteristics:</p>
+
+<ul>
+  <li><strong>Pre-training scaling</strong>: larger models trained on more data produce better base models. The low-hanging fruit here is not algorithmic — it is increasingly about data quality, synthetic data pipelines, and careful mixing of sources. Training set sizes are measured in trillions of tokens (smaller open models: 5–10 trillion; Qwen reportedly trained on up to 50 trillion; rumors of closed labs at 100 trillion). Pre-training remains the dominant consumer of compute because you always want the best possible foundation before applying other techniques. The gigawatt-scale compute clusters coming online in 2026 — contracts signed in 2022–2023, two to three year lead times — will test pre-training scaling at previously inaccessible scales.</li>
+  <li><strong>Reinforcement Learning with Verifiable Rewards (RLVR) scaling</strong>: the innovation that made reasoning models possible. The model generates many candidate answers to a verifiable problem (math, code), the correct answer is used as the reward signal, and gradient updates push the model toward behaviors that produce correct answers. Unlike RLHF, which has no demonstrated scaling law (the seminal paper is literally titled "Scaling Laws for Reward Model Over-Optimization"), RLVR follows a log-linear relationship: ten times the compute yields a linear increase in benchmark performance. The Ai2 team ran an RL phase for an additional three and a half weeks after their November deadline and "the model got notably better." RLVR compute is increasingly approaching pre-training compute in wall-clock time, though with very different hardware requirements — more memory bandwidth, less raw FLOP throughput.</li>
+  <li><strong>Inference-time scaling</strong>: letting the model generate more tokens before producing a final answer. The reasoning traces visible in models like o1 and DeepSeek R1 are the output of this process. The "aha moment" in the R1 paper — the model recognizing its own errors mid-reasoning and self-correcting — emerges naturally from RLVR training without being explicitly programmed. These behaviors were latent in the pre-training data (the model has seen countless examples of humans explaining their mathematical reasoning step by step) and RLVR amplifies them because they are useful for getting the right answer.</li>
+</ul>
+
+<p>The practical trade-off between these axes is financial. Pre-training is a fixed cost; once trained, the model's capabilities are permanent. Inference scaling is a per-query cost. If a model will be in production for only six months before the next generation replaces it, it may not be worth spending $50 million on pre-training when inference scaling can close much of the gap on a query-by-query basis. Lambert expects $2,000-per-month subscription tiers to emerge in 2026 — the next step after the $200 tier — precisely because there are users who will pay for genuinely more capable inference.</p>
+
+<h2>Post-Training: The Art of Unlocking Capability</h2>
+
+<p>Lambert's framing of the training pipeline is clarifying: pre-training is soaking up knowledge; RLVR is unlocking the skills to use that knowledge; RLHF is the finishing touch that makes the model pleasant and consistent to interact with. The three stages operate at very different scales and with very different hardware requirements.</p>
+
+<p>The data quality question in pre-training has become a serious scientific discipline. Researchers at Ai2 use a procedure where small models are trained on different data source mixes (GitHub, Stack Exchange, Reddit, Wikipedia, scientific PDFs) and evaluated against target benchmarks, then basic linear regression identifies the optimal data mix. "If your evaluations change, your data set changes a lot" — which means the whole pipeline has to be re-run every time the capability targets shift, as they do whenever a new modality (like code reasoning) becomes important.</p>
+
+<p>RLHF's role has stabilized as a formatting and stylistic finishing step — useful for ensuring the model's tone, response organization, and personality match what users expect, but with hard limits on how much compute investment pays off. RLVR, by contrast, has no known upper bound on benefit from additional compute, which is why research attention has shifted so dramatically toward it.</p>
+
+<p>The frontier of RLVR research is expanding the set of domains where verifiable rewards exist. Math and code are the canonical examples. Scientific domains with wet labs (biology, chemistry) are being explored by well-funded startups. Process Reward Models — which assign scores to intermediate reasoning steps rather than just final answers — and value functions are areas of active research, though with mixed results so far.</p>
+
+<h2>Agents, Tool Use, and the Automation Gap</h2>
+
+<p>The gap between what AI agents can do in a controlled demo and what they reliably do in production is the central tension in the near-term forecast. Both Raschka and Lambert describe using AI coding tools (Claude Code, Cursor, Codex) in fundamentally different ways: Claude Code as an agentic collaborator that reasons at the design level and autonomously manages a whole project; Cursor or Codex as a chat interface that helps while keeping the human in the loop on individual code changes.</p>
+
+<p>Lambert points out that Claude Code and the underlying Claude Opus 4.5 model are, in practice, meaningfully different experiences even when you select the same model in both interfaces — Claude Code's environment is specifically optimized for the agentic use case in a way that makes the difference visible. Raschka's observation that he is "not quite there yet where I'm comfortable" with fully agentic systems that touch the whole project captures where most practicing developers are today.</p>
+
+<p>The fundamental bottleneck for broader automation is computer use — the ability of an agent to take arbitrary actions in a general computing environment. Multiple labs demoed this in 2025 (Claude's computer use, OpenAI's CUA) and, as Lambert notes bluntly, "they all suck." The problem is structural as much as technical: models are not interfacing with a MacBook, they are working in sandboxed cloud environments that interact with Google, Slack, Amazon, and other services in ways very different from human usage. The specification problem is also real — it is far harder to specify what you want from a general computer-use agent than to specify what you want from a coding assistant, because the failure modes are more varied and the feedback loop is longer.</p>
+
+<p>Raschka offers a concrete near-term example: LLM-generated figures are currently terrible, even though figure generation is in some ways simpler than code generation. This suggests the frontier of obvious, fixable capability gaps is still wide. Lambert's most bullish near-term prediction is that the developer-as-designer model — where a human manages a dashboard of agents each working on a one-to-two day task — becomes the standard workflow within a few years.</p>
+
+<h2>The Human Question: Learning, Work, and What Gets Lost</h2>
+
+<p>Both guests are careful to distinguish between AI that removes drudgery and AI that removes the productive struggle through which expertise is built. The survey data they cite is striking: senior developers with ten or more years of experience are <em>more</em> likely than junior developers to ship code where over half is AI-generated. Lambert's interpretation is that expertise makes you a better judge of AI output — you can review and verify it faster, and you trust it more appropriately. But Raschka raises the inverse worry: "How will people learn if you never try to do the thing yourself? Would you actually go through the length of struggling?"</p>
+
+<p>The parallel to education is explicit. Raschka recommends a structured two-pass approach to learning: one pass offline with full focus, followed by a second pass using the LLM to generate exercises, clarify confusion, and extend the ideas. Lambert's approach is the reverse — use the LLM first to lay out the full conceptual landscape of a new field, then go deep. Both agree that the model of "just ask the LLM" without any prior investment in the material produces shallower understanding.</p>
+
+<p>The RLHF-as-smoothing-force problem is one of the more philosophically interesting tensions Lambert raises. The preference tuning pipeline is explicitly designed to aggregate human preferences, which means it compresses toward the center — the model learns to be useful to the median user. This is incompatible with having strong voice, being incisive, or preserving the kind of raw, high-information-density writing that Lambert describes as characteristic of good research communication. "It's going to be hard for a model to be very incisive when there's that filter in it." The same filter that makes models safe and pleasant to interact with makes them, in some fundamental sense, less interesting.</p>
+
+<h2>AGI, ASI, and the Definitional Muddle</h2>
+
+<p>The AGI discussion lands in a pragmatic place. Lambert's working definition — when AI can replace any remote worker, taking in information and solving digital tasks autonomously — is more useful than the philosophical definitions because it identifies a specific capability gap (continual learning from feedback, the ability to update from mistakes as a human employee would) that current systems lack. His counter-argument to his own framing is that in-context learning, providing models with extensive personal context, may produce the appearance of personalization without requiring weight updates — and that may be sufficient for most use cases.</p>
+
+<p>The economic impact question is separated from the AGI question. As Lambert observes, there has not yet been an obvious GDP-level jump from LLM deployment. The more realistic near-term impact is "making all of human knowledge accessible to the entire world" — an enormous, quiet force that won't show up in quarterly reports but will, over decades, drive the kind of diffuse innovation that produces new companies, new sciences, and new ways of solving problems. Raschka's example: an LLM can provide customized, on-demand answers to "which Disneyland tickets should I buy given my specific travel dates and preferences" in a way that no existing resource — not search, not a travel agent, not a guidebook — can match. Multiplied across billions of such queries, this is genuinely transformative.</p>
+
+<p>On timelines, both guests resist specific predictions while acknowledging that the pace of progress in 2025 was faster than most expected. The reasonable near-term bets are domain-specific AlphaFold moments — AI systems with wet lab access proposing and testing scientific hypotheses — and continued dramatic improvement in software development productivity. The one structural bet Lambert makes for 2026: the AI coding tools that seem like magic today will be obviously limited compared to what ships by year end.</p>
+
+<hr>
+
+<h2>What To Do With This</h2>
+
+<ul>
+  <li><strong>Build a small LLM from scratch before you try to fine-tune or deploy a large one.</strong> Raschka's recommendation is specific: start with a GPT-2-scale model (~120M parameters) that fits on one GPU, implement the forward pass, the attention mechanism, and the training loop yourself. This gives you a reference implementation you can actually verify — the code either runs or it doesn't — and lets you develop genuine intuition for what happens when you add MoE, change the attention type, or modify the normalization scheme.</li>
+  <li><strong>Use the Hugging Face model hub config files to reverse-engineer architectures you want to understand.</strong> Every open-weight model on Hugging Face has a human-readable config.json that lists the exact architecture choices — number of layers, attention heads, vocabulary size, activation function. Load the config, start from your GPT-2 implementation, add the differences one at a time, then verify your implementation reproduces the same outputs as the reference Transformers library implementation. This is faster than reading the paper and more reliable than reading the code cold.</li>
+  <li><strong>If you are an ML researcher with limited compute, focus on evaluation rather than training.</strong> Lambert is explicit about the asymmetry: if you can identify a capability gap that frontier models have — something Claude 4.5 or GPT-5 consistently fails at — and build a rigorous evaluation for it, the frontier labs will pick it up and your name will be in the next model's release blog post. This requires zero training compute and has potentially large career impact. The key is being narrow enough that you can actually establish ground truth.</li>
+  <li><strong>When using AI coding tools, match the tool to your comfort with the agentic level.</strong> Raschka uses Codex (VS Code plugin, chat interface, human reviews each change) for most work and reserves Claude Code (full agentic, manages the whole project) for cases where he wants to practice reasoning about design rather than implementation. This is not a hierarchy — it is a spectrum. Start with the more constrained tool and expand autonomy as you build trust in the system's failure modes.</li>
+  <li><strong>Adopt a two-pass learning strategy when using LLMs to study technical material.</strong> First pass: read or engage with the primary source without the LLM, taking notes, letting confusion accumulate. Second pass: use the LLM to resolve specific confusions, generate example problems, check your understanding, and extend the ideas. The key is that the LLM functions as an enrichment tool rather than a replacement for the initial engagement, which preserves the productive struggle that builds durable expertise.</li>
+  <li><strong>Sandbox your AI agent interactions until you understand the failure modes.</strong> Tool use — giving an LLM access to your file system, your email, your shell — is still early enough that the failure modes are novel and sometimes destructive. Raschka's point about containerization is practical advice: run tool-capable models in isolated environments (Docker, a dedicated VM, a cloud sandbox) before you trust them anywhere near production data or important accounts. The gains from tool use are real; the risks from unsupervised tool use are also real.</li>
+  <li><strong>Invest in domain-specific fine-tuning for your industry if you have proprietary data.</strong> Raschka's prediction about pharmaceutical, legal, and financial companies building in-house models on proprietary data is not speculation — it is the obvious next step for any organization whose competitive advantage is its internal knowledge base. The playbook is: hire someone who has worked at a frontier lab, use LoRA (low-rank adaptation) to fine-tune an open-weight base model, and keep the weights on-premises. This is becoming feasible at smaller and smaller scales.</li>
+  <li><strong>Do not conflate RLHF and RLVR when thinking about what post-training can and cannot do.</strong> RLHF (reinforcement learning from human feedback) shapes style, tone, and safety behaviors — it saturates relatively quickly and does not follow a clean scaling law. RLVR (reinforcement learning with verifiable rewards) unlocks reasoning capability and follows a log-linear scaling law with no known upper bound. If you are evaluating a model's reasoning improvement, the relevant question is how much RLVR compute was allocated, not how much RLHF was done.</li>
+  <li><strong>Track Chinese open-weight model releases alongside American ones.</strong> The practical advice from Lambert: use OpenRouter or a similar multi-provider inference platform to actually run Kimi K2, Qwen 3, and MiniMax models alongside Claude, GPT, and Gemini on your specific tasks. The benchmark gap has closed substantially, and the licensing terms are often more permissive. The models are slower (serving infrastructure is leaner) and the platforms are less polished, but the underlying model quality warrants direct evaluation rather than reliance on benchmark charts.</li>
+</ul>
+
+<h2>Lines Worth Keeping</h2>
+
+<blockquote>
+  "I don't think there will be any company who is having access to a technology that no other company has access to. The differentiating factor will be budget and hardware constraints. The ideas will not be proprietary."
+  <br><br>— <strong>Sebastian Raschka</strong>
+</blockquote>
+
+<blockquote>
+  "There's no scaling law for RLHF where if you log-increase the compute you get some performance. In fact, the seminal scaling paper for RLHF is called 'Scaling Laws for Reward Model Over-Optimization.' That is a big line to draw with RLVR and the methods we have now."
+  <br><br>— <strong>Nathan Lambert</strong>
+</blockquote>
+
+<blockquote>
+  "The aha moment in the R1 paper — the model itself recognized it made a mistake and then said, 'I did something wrong, let me try again.' And I think that's just so cool that this falls out of just giving it the correct answer and having it figure out how to do it."
+  <br><br>— <strong>Sebastian Raschka</strong>
+</blockquote>
+
+<blockquote>
+  "If you have a lab that is trying to do RLVR in scientific domains and they have hundreds of millions of dollars of funding and wet labs where they're having language models propose hypotheses that are tested in the real world — maybe they're early by six months and they make it, or maybe they're early by eight years. You don't really know."
+  <br><br>— <strong>Nathan Lambert</strong>
+</blockquote>
+
+<blockquote>
+  "We are not actually realizing that it's a gigantic thing that's hard to measure — making all of human knowledge accessible to the entire world. I feel like I can basically ask an LLM anything and get an answer, and it's doing less and less hallucination. Nobody's really talking about that because they just immediately take it for granted that this is awesome."
+  <br><br>— <strong>Lex Fridman</strong>
+</blockquote>
+
+<blockquote>
+  "I'm continuously disappointed how bad LLMs are at really getting to the core insights — which is what a great summary does. Even with extensive, elaborate prompts where I'm really trying to dig for the insights, it's still not quite there. Particularly, they're all trained with RLHF, which is designed to average how the model behaves. It's going to be hard for a model to be very incisive when there's that filter in it."
+  <br><br>— <strong>Nathan Lambert</strong>
+</blockquote>
+
+<blockquote>
+  "If you use an LLM to do all your coding for me, now there's no coding — I'm just managing something that is coding for me. Two years later, if I just do that eight hours a day, do I feel fulfilled still? Am I still proud to build something?"
+  <br><br>— <strong>Sebastian Raschka</strong>
+</blockquote>
+
+<blockquote>
+  "DeepSeek kicked off a movement within China similar to how ChatGPT kicked off a movement in the US where everything had a chatbot. There's now tons of tech companies in China releasing very strong frontier open-weight models to the point where DeepSeek is kind of losing its crown — and that could look back as a big narrative point where DeepSeek came and then provided this platform for way more Chinese companies."
+  <br><br>— <strong>Nathan Lambert</strong>
+</blockquote>

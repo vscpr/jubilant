@@ -1,0 +1,135 @@
+<h2>The Word That Reveals Everything Wrong With AI Customer Service</h2>
+
+<p>Matt Price has a problem with the word "containment." After thirteen years at Zendesk watching customer service software evolve—and now as CEO of Crescendo AI, a company with over 500 deployments—he uses that single word to expose the rotted foundation beneath most AI customer service implementations.</p>
+
+<p>"There is a term in CX called deflection and containment," Price says. "Most bot companies are talking about containment, as if consumers are some kind of virus that you can't let near your organization." The language isn't accidental. It reflects a philosophy—that customers are a cost to be minimized, a problem to be routed away from humans, a liability to be "contained." And Price believes that philosophy, now being encoded into the first generation of AI bots, will prove fatal to the companies that embrace it.</p>
+
+<p>His bet is the opposite: that the companies that survive and thrive over the next five years will be the ones that treat customer service not as overhead but as a competitive frontier—and that AI, properly architected, is the enabler of that transformation rather than a replacement for it.</p>
+
+<h2>Why Bolting AI onto Broken Processes Fails</h2>
+
+<p>Price joined Crescendo in 2024 after leaving Zendesk Labs, arriving at a moment when LLMs had just made something genuinely new possible. His framing of that moment is stark: the introduction of large language models represents a shift in customer care "bigger than anything since maybe the introduction of the telephone." Not a marginal improvement—a category change.</p>
+
+<p>But the first wave of adoption has largely wasted that opportunity. The dominant approach has been what Price calls "bolt-on": companies take their existing customer service processes, preserve their structure, and attach an AI layer on top. CSAT scores drop. Labor savings don't materialize because the AI and the human workforce aren't integrated—the BPO vendor wants to sell more people-hours, and the bot vendor wants to maximize AI resolutions, and neither is aligned with the actual customer outcome.</p>
+
+<p>"BPO people, all they want to do is provide more people. Technology people, bot vendors, all they want to do is maximize the amount of work the AI is doing," Price explains. The result is that companies invest in AI bots without seeing representative savings in their labor costs, and customers experience the friction of handoffs between systems that weren't designed to work together.</p>
+
+<p>Crescendo's response was structurally radical: they are simultaneously a technology company and a contact center operation. They acquired a large BPO business—thousands of people—because they wanted to understand, from the inside, exactly what it would take to optimize the full process. "We wanted to know from the inside out exactly how to optimize the product and process and conversion of these businesses to AI." This is not a software company selling a platform. It's a company that has eaten the whole problem.</p>
+
+<h2>The Architecture of an AI-Native Contact Center</h2>
+
+<p>Crescendo's technical approach reflects the same end-to-end thinking. Price distinguishes between "first-generation" LLM bots—heavily scripted, workflow-driven, where chunks of instructions are sequenced and sent to a language model and responses collected—and what he considers the next generation: autonomous, multimodal agents that can reason about which tools to use without being explicitly told.</p>
+
+<p>The clearest illustration is a customer they call RASHO, a smart lawn irrigation company. A customer sets up the device through an app. The AI agent can check device connectivity via an MCP connection, diagnose what's wrong, switch from text to voice if the customer needs their hands free, ask for a photo of the device to scan, and talk them through a physical reset—all within a single interaction, all from the same interface, sequencing modalities as the situation demands.</p>
+
+<p>"What we've done is we've elevated things up a level further and given more autonomy to the AI. We don't have to give it any more instructions. It's smart enough now to know, well, if I'm asking them to check the device, maybe I should check it myself first. Or smart enough to know that if I'm asking somebody to do something with their hands, maybe I should flip it to a voice interaction."</p>
+
+<p>This matters technically because the bolt-on approach forces companies to rebuild everything for each channel. Build a chat workflow, then rebuild it for voice, then rebuild it for email—because the underlying architecture sequences instructions per modality. Crescendo's agentic architecture sits above that layer, which means a single configuration can deploy across channels and adapt in real time.</p>
+
+<p>Reliability is baked in at the infrastructure level. If OpenAI goes down, customer service can't go down with it. Crescendo operates a multi-LLM orchestration layer that can fail over between models—OpenAI, Claude, Gemini—dynamically. This also gives them a competitive advantage as base models improve: they can route to better-performing models as capabilities evolve, without rebuilding anything. Clients, Price notes, generally don't care which model is running—they care about outcomes, and they trust Crescendo to make the model selection.</p>
+
+<p>Accuracy across the system runs at about 99.5 percent. Standalone AI typically operates in the low-to-mid 90s; human agents are also typically in the 90s. The gap is achieved through a combination of curated knowledge (Crescendo helps clients clean and organize their knowledge base before deployment—bad training data is the primary source of inaccuracies, not hallucinations per se), continuous calibration, and human-in-the-loop scoring. Every interaction is analyzed by AI across multiple vectors: customer sentiment, whether the problem was resolved, compliance with regulations, sales intent. Interactions that fall below quality thresholds aren't billed.</p>
+
+<h2>The Business Model as a Forcing Function</h2>
+
+<p>The pricing model isn't ancillary to the product—it's load-bearing to the entire philosophy. Crescendo charges per successful outcome. Not per conversation, not per interaction, but per solved problem. And critically: they don't charge at all if the customer experience was negative.</p>
+
+<p>"Whether it's handled by the AI or the human, we only get paid when we solve that outcome, and we never charge a customer if it was a negative customer experience, because we can do that now."</p>
+
+<p>This is only possible because the AI tooling now exists to actually assess outcome quality at scale. For years, the theoretical ROI of customer service software never materialized in practice—companies bought seats, invested implementation time, and didn't see the results. Outcome-based pricing shifts the risk to Crescendo and aligns every incentive in the system toward actual resolution. If the AI doesn't outperform the client's existing system, Crescendo doesn't charge until it does.</p>
+
+<p>Price is clear that this is a significant driver of their growth rate. It's also a structural moat: the ability to make this guarantee depends on having both the AI capability and the human backstop—neither alone is sufficient to be confident enough in outcomes to stake revenue on them.</p>
+
+<h2>Where Humans Actually Belong</h2>
+
+<p>The human-in-the-loop model at Crescendo is not the one most people picture when they hear "AI plus humans." It's not a fallback queue where overflow tickets go when the bot fails. It's a set of specialized roles that have been redesigned around what AI genuinely cannot do.</p>
+
+<p>When the AI reaches its "acceptable boundaries"—when a problem requires judgment, expertise, or authorization it doesn't have—the escalation goes not to the back of an email queue, but to a trained specialist who is ready and equipped. For a medical company client, that means HIPAA-certified representatives. For a financial services firm, it means compliance-trained agents. The specialization is procured and maintained by Crescendo as part of the service.</p>
+
+<p>The more interesting transformation happens in the non-escalation roles. Price describes a QA manager whose traditional job involved sampling calls, scoring them against a rubric, and filing reports. That work is now almost entirely automated. What that person does instead: they review AI-generated insights across all interactions proactively, and surface business intelligence that no human workforce could have produced at scale. "As a shoe manufacturer, you've got a sizing issue on this line and you're generating these refunds. We recommend that you put a sizing guide on your website." The role has shifted from functional compliance work to strategic advising.</p>
+
+<p>Crescendo describes these people as "superhumans"—workers whose capabilities have been amplified by AI such that they can operate at a level of analysis and insight that wasn't achievable in a labor-intensive environment. Six distinct roles have been redesigned in this way. Turnover has dropped significantly. Price's explanation is simple: repetitive work isn't fulfilling, and these roles are no longer repetitive.</p>
+
+<h2>Customer Service as Product Innovation</h2>
+
+<p>The most ambitious claim Price makes—the one that contextualizes everything else—is that customer service innovation is becoming as strategically important as product innovation. He grounds this in an example from a beauty company client. Their biggest driver of returns was color mismatch: customers bought cosmetics that didn't match their skin tone. Crescendo implemented AI-powered color matching through their customer service interface. The downstream effect isn't just fewer returns—it's a reduced need for physical retail presence, because the service that used to require a trip to Ulta can now happen through a customer's phone.</p>
+
+<p>RASHO, the irrigation company, is moving from reactive to proactive support: when a customer buys the product, they're immediately connected to an AI that walks them through setup. The customer service interaction becomes part of the product onboarding, eliminating the moment where customers consult a paper manual or search YouTube.</p>
+
+<p>LovePop, a pop-up greeting card company with a generous returns policy, had a staffing problem during peak seasons: by the time a human got back to a customer with a return or replacement offer, the emotional moment had passed. The customer needed the card for their mom's birthday <em>now</em>. AI-first response changed the economics of that exchange—the offer arrives in seconds, not eight hours. TrustPilot rating: from 3.6 to 4.6 in a few months.</p>
+
+<p>Price quotes Ken Chenault, former Chairman of American Express, on the emotional architecture of brand: "Brands are a connection of two things. There's the logical, which is the service the product offers. And then there's the emotional connection. And there's no better place where the emotional gets activated to a brand is within customer care, because that's where the human interaction actually takes place." The corollary he draws is counterintuitive: as AI handles more volume, the moments when a human does engage become <em>more</em> meaningful signals of investment. "If I am allowed to speak to a human, then I know that that's a costly resource for you, and you're really going out of your way to make that connection with me."</p>
+
+<h2>The Consolidation Play</h2>
+
+<p>Crescendo is actively pursuing acquisition of founder-led BPO businesses. Price's logic: most independent contact center operators have tried to enable AI, hit the limits of their technical depth, and wound up as third-party customers of bot vendors—still in the bolt-on trap. The major BPO players are already showing signs of contraction; TTEC attempted a go-private transaction that failed amid declining share prices, and growth is slowing across the category.</p>
+
+<p>For founders who want to give their clients and employees a future in an AI-native world, Crescendo offers a path: bring your talent into the forward-deployed model, upgrade your clients to the AI-native platform, and benefit from the depth of AI capability that an independent services company couldn't realistically attract or retain.</p>
+
+<p>Price is explicit about not wanting quick exits. He's building a category—"AI-native customer concierge companies"—and expects Crescendo to be its defining example. The five-year vision: "People will look back and say, why did we ever try and do that ourselves? It's a bit like in anybody that's a mid-market manufacturer now, why would we ever set up a production line and tool it ourselves and staff it ourselves when we can design a product and work with a contract manufacturer to deliver it for us?"</p>
+
+<h2>What This Means for People in the Industry</h2>
+
+<p>Price is asked directly what skills someone currently working in customer service should develop to stay relevant. His answer is practical and doesn't lean on reassurance. First: AI literacy is now foundational—learn to prompt, learn to improve your prompts with AI, stay current on capabilities. It's table stakes, like learning to type was once table stakes.</p>
+
+<p>Second, and more important: the skills that made great customer service people great before AI—empathy, careful listening, diligence in follow-up—are exactly the skills that AI cannot replicate and that become more valuable as AI handles more volume. The people who were copying and pasting macros into chat windows were always in a precarious position; AI simply makes that visible. The people who were genuinely good at human connection have been underutilized by an industry that structured their jobs around repetitive throughput.</p>
+
+<p>AI also acts, in Price's framing, as a democratizer. A brilliant electronics technician who doesn't speak fluent English has been limited in who they can serve. AI removes that barrier—translating, smoothing communication—and allows expertise to reach anyone who needs it. That's not a threat to the expert; it's an expansion of their reach.</p>
+
+<p>The industry's 40% annual turnover rate wasn't natural law. It was a consequence of designing jobs that were repetitive, seasonal, and fundamentally not fulfilling. Crescendo's attrition is substantially lower—a direct result of the job redesign that happens when AI takes over the repeatable parts and humans are redeployed to the work that requires judgment.</p>
+
+<p>The CX leader who spent decades budget-starved and relegated to firefighting—called into the boardroom only when a complaint reached the CEO—is the figure Price most wants to rehabilitate. "This is a new era where CX leaders get back in the boardroom and they get to be innovators." The head of customer support at RASHO has gone from being a problem-solver and people-manager to being a customer experience creator. That's not a consolation prize. That's the actual job.</p>
+
+<hr>
+
+<h2>What To Do With This</h2>
+
+<ul>
+  <li><strong>Audit your AI deployment for "containment" thinking.</strong> If your current bot is designed to deflect and prevent customers from reaching humans, the architecture is misaligned with customer outcomes. Map what happens when the bot fails—if it routes to a generic email queue, that's the problem to fix first.</li>
+  <li><strong>Redesign human escalation before deploying AI, not after.</strong> The most common mistake is dropping AI in and pushing humans back to the old experience. Define specifically who handles escalations, what expertise they have, and how they receive context from the AI before you go live.</li>
+  <li><strong>Switch to outcome-based evaluation of your AI vendor.</strong> If you're paying per conversation or per seat, your vendor's incentives aren't aligned with resolution quality. Push for per-successful-outcome pricing, or at minimum build outcome-quality tracking into your contract terms.</li>
+  <li><strong>Map your AI training data for accuracy, not just coverage.</strong> Most "hallucinations" are actually inaccuracies from bad source material—outdated articles, inconsistent agent responses, wrong information on your website. Audit your knowledge base before assuming the model is the problem.</li>
+  <li><strong>Build multi-LLM failover into any production deployment.</strong> A single-provider AI system has availability risk. Architect for the ability to route between models (OpenAI, Claude, Gemini) so that provider outages don't take down customer-facing systems.</li>
+  <li><strong>Identify which QA roles in your organization can be shifted from sampling to insights.</strong> If a QA manager is manually reviewing a 5% sample of calls, AI can score 100% of interactions. Redeploy that person to proactively surface product and process issues from the full data, not a sample.</li>
+  <li><strong>Move at least one customer service touchpoint from reactive to proactive.</strong> The RASHO model—connecting customers to AI-assisted setup immediately after purchase—eliminates a support ticket before it's filed. Identify the highest-volume reactive support category and design a proactive intervention for it.</li>
+  <li><strong>Retrain your customer service team on AI literacy before deploying AI to them.</strong> Price's experience is that when agents understand what AI can and can't do, their confidence and engagement go up. Prompting skills and AI workflow familiarity aren't optional extras—they're the foundation for the new role.</li>
+  <li><strong>Evaluate multimodal capability before choosing a platform.</strong> Single-channel bots (text only, or voice only) force you to rebuild flows for every new channel. A multimodal architecture that can switch between text, voice, image, and device integration within a single session reduces long-term rebuild costs and handles more complex support scenarios.</li>
+  <li><strong>Consider the emotional signal value of human availability as a feature, not just a cost.</strong> As AI handles volume, the choice to make a human available becomes a differentiator. Design your escalation paths to make the human moment feel like an upgrade, not a failure state—because customers will notice.</li>
+</ul>
+
+<h2>Lines Worth Keeping</h2>
+
+<blockquote>
+  "Most bot companies are talking about containment, as if consumers are some kind of virus that you can't let near your organization."
+  <p>— Matt Price</p>
+</blockquote>
+
+<blockquote>
+  "Whether it's handled by the AI or the human, we only get paid when we solve that outcome, and we never charge a customer if it was a negative customer experience, because we can do that now."
+  <p>— Matt Price</p>
+</blockquote>
+
+<blockquote>
+  "If I am allowed to speak to a human, then I know that that's a costly resource for you, and you're really going out of your way to make that connection with me."
+  <p>— Matt Price</p>
+</blockquote>
+
+<blockquote>
+  "Innovation in customer care is going to become as important as innovation in product."
+  <p>— Matt Price</p>
+</blockquote>
+
+<blockquote>
+  "To make AI work in automation, we're being incredibly flexible about where you inject people, and then continually evolving that is a valuable service."
+  <p>— Matt Price</p>
+</blockquote>
+
+<blockquote>
+  "For 10, 20, 30 years, they've been downtrodden, budget starved. The only time the board and leadership once talked to them about is when they received a direct complaint as to what's going to happen. AI changes that. This is a new era where CX leaders get back in the boardroom and they get to be innovators."
+  <p>— Matt Price</p>
+</blockquote>
+
+<blockquote>
+  "LLMs really create a world of abundance in CX. The first time things are not constrained and businesses can open up the door to the interaction."
+  <p>— Matt Price</p>
+</blockquote>
