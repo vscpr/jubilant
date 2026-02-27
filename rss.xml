@@ -4,8 +4,426 @@
     <title>Podcast Summaries</title>
     <link>https://vscpr.github.io/jubilant</link>
     <description>AI-generated podcast summaries.</description>
-    <lastBuildDate>Thu, 26 Feb 2026 16:31:01 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 27 Feb 2026 15:07:23 GMT</lastBuildDate>
     <atom:link href="https://vscpr.github.io/jubilant/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lenny's Podcast: Product | Career | Growth - Slack founder: Mental models for building products people love ft. Stewart Butterfield</title>
+      <link>https://vscpr.github.io/jubilant/items/Summary%20-%20Lenny%27s%20Podcast%20Prod%20-%20ls%20for%20building%20products%20people%20love%20ft.%20Stewart%20Butterfield.txt.html</link>
+      <guid isPermaLink="false">id:PodcastContent211/v4/bc/b2/98/bcb298b5-ccd9-9069-7646-3ff358ac0239/transcript_1000737597633.ttml.ttml</guid>
+      <pubDate>Fri, 27 Feb 2026 15:07:23 GMT</pubDate>
+      <description><![CDATA[<h2>The Product Philosophy of Stewart Butterfield: Value, Comprehension, and the Courage to Stay Uncomfortable</h2>
+
+<p>In 2014, shortly after Slack's public launch, Stewart Butterfield told MIT Technology Review that what the company was shipping was "just a giant piece of shit." It was terrible, he said, and they should be humiliated to offer it to the public. His colleagues printed the quote on forty sheets of 8.5x11 paper and plastered them to the office walls. To Stewart, that was exactly right. If you can't see almost limitless opportunities to improve your product, you shouldn't be designing it. That perpetual, unblinking dissatisfaction — not with people, not with effort, but with the gap between what exists and what could — is the throughline of everything Stewart has built.</p>
+
+<p>There's a framework he returned to constantly in the years of building Flickr and then Slack, something he calls utility curves. Picture a familiar S-curve. On the horizontal axis: cost, effort, investment. On the vertical: value, convenience, quality — whatever matters most for the thing you're making. The curve is flat at the start, then arcs steeply upward through a magic threshold, then flattens again as continued investment yields diminishing returns. The insight is deceptively simple but widely ignored: features are not binary. You don't have a feature or not have it. You have a feature that's somewhere on that curve — and if you haven't crossed the threshold where it becomes genuinely useful, you've added complexity without adding value. You've made the product worse.</p>
+
+<p>People would bring a feature to review, and the question was never just "should we build this?" It was: where are we on the curve? Are we on the first shallow segment where we haven't yet delivered real value? Are we on the steep upslope where every increment matters enormously? Or are we past the plateau, chasing improvements that no longer move the needle? Most teams never ask this. They ship the feature, see that it doesn't get traction, and kill it — without recognizing they simply stopped too early, before the threshold.</p>
+
+<p>The curve doesn't stand still, either. Jeff Bezos called it "divine discontent": once customers experience something done well, their expectations rise. The line on the vertical axis keeps climbing. Login flows that were fine three years ago feel clunky now. Checkout experiences that were acceptable are now abandonment drivers. Most things in any product get implemented once, get improved periodically if they're lucky, and get improved never if they're not. Account creation, forgot-password flows, the essential friction points where customers first encounter who you actually are — these rarely get the love they deserve, even as the quality bar across the industry keeps rising.</p>
+
+<h2>Comprehension Over Friction</h2>
+
+<p>There's a mantra in product circles that needs to die: reduce friction. It became so deep in people that it metastasized into dogma — fewer clicks, faster flows, streamlined everything. But it's almost always the wrong diagnosis.</p>
+
+<p>The relevant variable is not friction. It's intent and comprehension. When you know exactly what you want — you're buying Taylor Swift tickets for a specific date at a specific venue — friction genuinely matters. You'll push through a slow Ticketmaster page because your intent is absolute and your comprehension is total. In those cases, reducing friction is real work worth doing. But those cases are the exception. For most of a product, most of the time, the person on the other side is operating with marginal intent and incomplete comprehension. They've heard about your product third-hand from a friend, saw it mentioned in an article, and finally wandered to your site at the minimum possible threshold of curiosity. They don't know what it is. They don't know what it will cost them. They don't know what will happen next.</p>
+
+<p>That's not a friction problem. That's a comprehension problem. And if your response is to reduce friction — clear the path, speed up the flow, minimize the clicks — you're solving for the wrong thing. You're optimizing the road to a destination they haven't decided they want yet.</p>
+
+<p>The design challenge is creating comprehension: what is this thing, and what am I supposed to do next? The visual hierarchy, the affordances, the sequencing of decisions — all of it is in service of helping someone understand. Apple's clock app has a "Sleep" section with an invitation to "turn sleep on." Most people have no idea what that means, what it costs them, or what will change. So they ignore it, never getting the value of a feature that almost certainly involved months of engineering. That's not a friction failure. It's a comprehension failure. And it repeats itself endlessly across products: features built in good faith, buried behind language or design that assumes the user already knows why they'd want it.</p>
+
+<p>The corollary is what "Don't Make Me Think" actually means. It's not just the metabolic cost of decision-making — though that's real, a genuine biological expenditure — it's the emotional cost. When software stops you to make a decision you don't understand, you feel stupid. Not all users conclude the software is broken. Most of them conclude they are. They associate that feeling with your product, and they don't come back.</p>
+
+<p>Reducing click count is a particularly seductive wrong metric. You could make any action in an app a single tap by exposing every possible option in one infinite scroll. Obviously that's terrible. A little bit of that logic is also terrible — it just looks like product design. The real goal is making every individual step trivially easy, even if there are eight of them. Uber, in its early days, gave users exactly two choices: where do you want to go, and other. Everything else — payments, account settings, location changes — was behind "other." People who just wanted a ride, which was almost everyone, saw exactly one decision. Eight steps, each effortless, beats two steps where you're staring at fifteen options trying to eliminate the ones you don't want.</p>
+
+<h2>Craft as Competitive Advantage</h2>
+
+<p>In Vancouver, walking back to the Slack office with Brandon Velestuk, the rain coming down, they noticed something. Of the people walking toward them with umbrellas on the narrow Yaletown sidewalks, maybe one in three would tilt their umbrella out of the way so oncoming pedestrians didn't get stabbed in the eye. Two in three would just plow forward.</p>
+
+<p>There are three possible explanations. One: they enjoy the power. Two: they see the problem and genuinely don't know what to do about it. Three: they're completely oblivious to their impact. The first is rare. The second and third are everywhere. And that failure to be considerate, to actually think about the experience of the person in front of you — that's where the opportunity is. Tilt your umbrella became a saying at Slack. Your competitors' failure to be genuinely empathic about the experience they're creating is the advantage you can take.</p>
+
+<p>Slack's growth was driven significantly by cross-pollination: someone at one startup used Slack, loved it, moved to another company, and became an advocate. That advocacy wasn't manufactured. It came from the genuine experience of little things done right. The magic link — why ask people to remember a password when ownership of the email address is the verification mechanism in the first place? Just send a link, have it open the app, authenticate automatically. The notification defaults for new users: everyone who'd used messaging apps expected a notification for every message, so new Slack accounts needed that default even though it wasn't right for the product, but once you'd received ten messages, Slack would gently ask if you'd like to switch to recommended settings. The shouty rooster — when you type @everyone and are about to send a notification to 147 people across eight time zones, a little rooster pops up asking if you're sure. The Do Not Disturb rollout: weeks of advance notice to administrators, nested permission hierarchies so org admins could set policy while users could customize, defaults set so that the people who would never turn it on themselves would benefit from it automatically.</p>
+
+<p>None of these are big features. All of them are the product of someone stopping and actually thinking about what the human on the other end is experiencing — and then doing the work to get it right rather than shipping the easy version.</p>
+
+<h2>Hyper-Realistic Work-Like Activities and Parkinson's Law</h2>
+
+<p>Parkinson's Law is from 1956: work expands to fill the time available for its completion. The original observation was about bureaucracy and the Royal Navy — the number of ships declining, the number of sailors declining, but the number of administrators growing. It shows up the same way in every company.</p>
+
+<p>Here's the uncomfortable truth: most people you hire want to hire more people who report to them. Not because they're evil, not because they're stupid — in fact, they're smart, because everyone knows that headcount under you correlates with career trajectory, compensation, and authority. So a product manager wants to hire a junior product manager. What would the junior PM do? "They'd do the product management. I'd do the strategy." And so it compounds.</p>
+
+<p>As organizations grow, something else happens. At the very beginning, there's an enormous supply of known, valuable work: open a bank account, build a users table, implement authentication. Everyone knows what to do and knows it matters. Over time, the easy obvious stuff gets done. New people get hired. The supply of genuinely high-priority work that everyone clearly understands doesn't keep pace with the demand from people who need to demonstrate output.</p>
+
+<p>Enter hyper-realistic work-like activities. A team calls a meeting to preview the deck they're going to present at the real meeting, to get feedback on whether some of the slides should be improved. People are sitting in a conference room. Something is being projected. Everyone is talking about it. That is superficially identical to work. It is not work. It's a performance of work, and it spreads through organizations the way mold spreads through bread — invisibly, until it's everywhere. The people doing it don't know they're doing it. Executives do it. Board members do it. The further you are from clear decision-making authority and real accountability for outcomes, the easier it is to get trapped.</p>
+
+<p>At Slack, a team spent what had to be thousands of person-hours — engineering, QA, analytics, project management, user research — to A/B test whether pre-populating the reply box in threads with an @mention to the previous poster affected thread length. The finding: threads were 2.17 messages long with the feature versus 2.14 without it, at statistical significance that was probably marginal. Never mind that longer threads aren't clearly better. The problem is that the maximum possible value of that feature — even if the analysis were flawless and the effect real — was negligible. The cost of doing the analysis guaranteed it was a loser before the first line of instrumentation was written. That's hyper-realistic work-like activity. It looks exactly like rigorous data-driven product development. It isn't.</p>
+
+<p>The solution is not to shame the people doing it. It's the responsibility of leaders — managers, directors, executives, CEOs — to ensure there's sufficient clarity about priorities, enough genuine work in the supply, and explicit no's early enough that people don't end up filling the vacuum with something that only looks like progress.</p>
+
+<h2>We Don't Sell Saddles Here</h2>
+
+<p>Before Slack launched, when the team was still eight or nine people in private beta, Stewart wrote what became a legendary internal memo. He didn't change a word of it when he eventually posted it publicly. The point was to instill alignment early enough that it could survive growth and scale.</p>
+
+<p>The title is the thesis. If you sell saddles, you're in the business of leather and hardware. If you sell horseback riding — if you're selling the freedom, the experience, the version of your life where you spend time outdoors in a way you love — then the saddle is just the thing people need to do that. Lululemon sells yoga pants. They're also selling aspiration, health, and becoming the best version of yourself. Harley-Davidson sells motorcycles. They're also selling the open road and wind in your hair.</p>
+
+<p>The memo's argument was that building Slack meant simultaneously building the market for Slack. No one needs to be explained why they'd want beer or a car. But a messaging platform for organizations? That requires a specific vision of a different, better way of working — and that vision has to be communicated with as much care as the product is built. The Positioning principle: it's nearly impossible to create a genuinely new idea in someone's head. It's much easier to connect two existing ideas. The job isn't just building a product; it's creating the context in which people can understand why they'd want it.</p>
+
+<p>The owner's delusion is the failure to do this. Restaurant websites, circa ten years ago: slow-loading Ken Burns photo effects, background music, unclickable phone numbers rendered as images, no hours, no address. The five things every single person wants from a restaurant website — address, phone number, menu, hours, reservation — absent, replaced by things only the owner cares about. The owner designed the website for themselves, for how they feel about their restaurant, not for the person who's already decided to go and just needs to know where to park. Every product team does a version of this. The owner knows too much. They can't see their own thing through the eyes of someone who barely knows it exists and has a hundred other things on their mind.</p>
+
+<h2>On Pivots, Generosity, and Value Creation</h2>
+
+<p>Both Flickr and Slack emerged from failed video games. Both pivots involved internal tools built to make the team's own work better — IRC in the case of Glitch, which became the proto-Slack. Stewart was using internal communication infrastructure for years without explicitly building a product, adding only the things that were so obviously necessary they couldn't be avoided. When Glitch was eventually shut down, there were still nine million dollars in the bank and a team that still liked the game. But the honest assessment was that every non-ridiculous idea to make it commercially successful had been tried.</p>
+
+<p>The advice he gives about pivots isn't to pivot. It's to be coldly rational — because the default feeling is humiliation. You convinced investors to bet on you. You convinced employees to leave their jobs. You convinced users to give you their time. Admitting it isn't working means admitting all of that was wrong. For many founders, it feels better to let the company die slowly from capital starvation than to make that admission. But the rational question is simple: have you exhausted the good ideas? If yes, the expected value calculation has changed. Annie Duke used Glitch and Slack as a case study in smart folds — recognizing when the expected value of the alternative has exceeded the expected value of continuing.</p>
+
+<p>On generosity: there's game theory here, but it's not the main thing. The prisoner's dilemma logic — demonstrate cooperation early and consistently, and cooperation tends to be returned — is real. But the more important principle is the one Stewart had the entire company chant at all-hands meetings: in the long run, the measure of our success will be the amount of value we create for customers. Not revenue. Not growth. Value. That creates a very clear filter for any decision that feels slightly off. Anything that smacks of maximizing at the wrong moment, taking advantage of a customer's information asymmetry, or winning a negotiation in a way that doesn't actually serve them — those things fail the test. The consequence of consistently passing the test is that you attract better employees, create better culture, and build the kind of advocacy that no marketing budget can replicate.</p>
+
+<p>The SLA that backfired — 100x money back for any downtime, which made perfect sense when revenue was small and became an $8 million liability after going public — is not a counterargument. It's evidence of the principle working too well at too large a scale. The terms got adjusted. The orientation didn't change.</p>
+
+<p>Stewart spent years building products and companies. He's now mostly chilling, spending time with a two-and-a-half-year-old. The problems he finds genuinely interesting are the ones that don't have obvious software solutions — if anything could help people use their phones less, that would be a win. But the framework he built for thinking about products — utility curves, comprehension over friction, the owner's delusion, hyper-realistic work-like activities, tilt your umbrella — is a coherent system, not a list of tips. It all flows from one thing: the ability to see clearly what's actually being experienced, not what you intended to create. That's taste. It can be developed. Most people don't bother. That's the opportunity.</p>
+
+<h2>What To Do With This</h2>
+
+<ul>
+  <li><strong>Map your features to the utility curve before shipping.</strong> Before any feature ships, ask explicitly: are we on the first shallow segment (not enough to matter), the steep slope (every increment counts), or past the plateau (diminishing returns)? If you're below the threshold of genuine usefulness, don't ship — you're adding complexity without delivering value.</li>
+  <li><strong>Reframe every "reduce friction" conversation as "increase comprehension."</strong> When someone argues for fewer steps or fewer clicks, ask whether the real problem is comprehension — does the user understand what this is, what it will do, and what comes next? If not, removing friction doesn't help. Clarity does.</li>
+  <li><strong>Audit your highest-traffic but lowest-love flows.</strong> Account creation, forgot-password, checkout, onboarding — these get implemented once and rarely revisited. Pick one and ask: does it reflect current quality standards, or is it embarrassingly behind the bar your customers now carry from other products?</li>
+  <li><strong>Apply the Uber "where do you want to go / other" test to every screen.</strong> Identify the one or two things users actually want to do on any given screen and surface only those. Put everything else behind "other" or a second menu. Eight easy steps beats two steps with fifteen options each.</li>
+  <li><strong>Name and discuss owner's delusion explicitly on your team.</strong> Pull up your own website or product from the perspective of someone who barely knows you exist and has ten other things on their mind. What do they actually need in the first thirty seconds? Is it there? If the answer is uncomfortable, fix it — and then keep asking.</li>
+  <li><strong>Identify and kill one hyper-realistic work-like activity this week.</strong> Look at recurring meetings or analysis projects and ask: what is the maximum possible value this could create, and does it exceed the cost of doing it? If the cost is guaranteed to be higher than any plausible upside, stop. Say explicitly why, so the team understands the principle.</li>
+  <li><strong>Write your "We Don't Sell Saddles Here" document.</strong> Articulate the life or work outcome your product enables — not its features, not its category. What does the person's work or life look like after they've deeply adopted it? That's what you're selling. Make sure your marketing, onboarding, and sales all lead with that, not the saddle.</li>
+  <li><strong>Set your defaults with intention.</strong> Most users will never change default settings. Whatever you ship as the default is what most of your users will experience forever. For Do Not Disturb, the right default was on during sleep hours — because without a default, most people wouldn't turn it on. Audit your defaults and ask whether they serve most users or just the power users who customize everything.</li>
+  <li><strong>Ask "have we exhausted the good ideas?" before deciding to pivot — or to persist.</strong> The question isn't whether things are hard. It's whether you've genuinely tried every realistic path forward. If you have, the expected value calculation has changed. If you haven't, "it's hard" isn't sufficient to stop.</li>
+  <li><strong>Make your measure of success the value you create for customers, and say it out loud.</strong> Anything that feels like maximizing at the wrong moment — an overly aggressive contract term, a renewal tactic that benefits you at the customer's expense — fails this test. Saying the principle explicitly and repeatedly creates a filter that shapes a thousand small decisions you won't be in the room for.</li>
+</ul>
+
+<h2>Memorable Quotes</h2>
+
+<blockquote>
+  "I feel like what we have right now is just a giant piece of shit. It's just terrible and we should be humiliated that we offer this to the public."
+  <br><em>— Stewart Butterfield, 2014 (on Slack shortly after launch)</em>
+</blockquote>
+
+<blockquote>
+  "If you can't see almost limitless opportunities to improve, then you shouldn't be designing the product."
+  <br><em>— Stewart Butterfield</em>
+</blockquote>
+
+<blockquote>
+  "It became an assumption that you should always be trying to remove friction. When the challenge is really comprehension."
+  <br><em>— Stewart Butterfield</em>
+</blockquote>
+
+<blockquote>
+  "If your software stops me and asks me to make a decision, and I don't really understand it, you make me feel stupid."
+  <br><em>— Stewart Butterfield</em>
+</blockquote>
+
+<blockquote>
+  "Your failure to really be considerate and exercise courtesy and really be empathic about other people's experience is an advantage you can create. A critical advantage."
+  <br><em>— Stewart Butterfield</em>
+</blockquote>
+
+<blockquote>
+  "In the long run, the measure of our success will be the amount of value that we create for customers."
+  <br><em>— Stewart Butterfield (Slack company chant)</em>
+</blockquote>
+
+<blockquote>
+  "The reason I say you have to be coldly rational about it is because it's fucking humiliating."
+  <br><em>— Stewart Butterfield, on deciding to pivot</em>
+</blockquote>
+
+<blockquote>
+  "Everything is simple if you have no idea what you're talking about. If something seems simple, probably you don't understand it."
+  <br><em>— Stewart Butterfield</em>
+</blockquote>]]></description>
+    </item>
+    <item>
+      <title>Lenny's Podcast: Product | Career | Growth - The new AI growth playbook for 2026: How Lovable hit $200M ARR in one year | Elena Verna (Head of Growth)</title>
+      <link>https://vscpr.github.io/jubilant/items/Summary%20-%20Lenny%27s%20Podcast%20Prod%20-%20vable%20hit%20%24200M%20ARR%20in%20one%20year%20Elena%20Verna%20%28Head%20of%20Growth%29.txt.html</link>
+      <guid isPermaLink="false">id:PodcastContent221/v4/5f/e5/2d/5fe52d02-8a28-09d6-0cd7-1a16e40b8345/transcript_1000741838304.ttml.ttml</guid>
+      <pubDate>Fri, 27 Feb 2026 15:04:28 GMT</pubDate>
+      <description><![CDATA[<h2>The Playbook Is Dead. Long Live the Playbook.</h2>
+
+<p>Fifteen years of growth expertise, and only thirty to forty percent of it still applies. That is what Elena Verna discovered when she joined Lovable as Head of Growth — a company that had already rocketed to $100 million ARR in seven months and would double that in the next four. The conventional growth playbook, the one she had refined across Miro, Dropbox, SurveyMonkey, Amplitude, and Netlify, was largely irrelevant. Not wrong, exactly. Just insufficient for the velocity, the chaos, and the category-defining moment Lovable was living inside.</p>
+
+<p>The numbers alone demand attention. Lovable launched in the third week of November 2024. Less than a year later, over 200 million dollars in annual recurring revenue. Eight million users. Hundreds of thousands of paid subscribers. A Series B at a six-billion-dollar valuation. And a team of one hundred people — thirty of whom existed just six months prior. These are not numbers that yield to standard frameworks. They require a different way of thinking about growth entirely.</p>
+
+<p>What Elena found when she arrived was a company already in motion, growing ferociously before any formal growth function existed. Her first honest observation: she was not the engine. The company was growing because of something more elemental than any playbook could manufacture. Her job was to not stand in its way — to grease the wheels, to spot the walls before the car hit them, and to figure out which new loops could be built for a category still in full eruption.</p>
+
+<h2>Innovation Over Optimization: The 95/5 Inversion</h2>
+
+<p>In every previous role, Elena spent roughly ninety to ninety-five percent of her time optimizing — tightening funnels, improving activation flows, running A/B tests, squeezing more from what already existed. At best, five to ten percent of her bandwidth went to genuine innovation. At Lovable, that ratio has inverted completely. Ninety-five percent of her time now goes to building new growth loops from scratch. Five percent to optimization.</p>
+
+<p>This is not a stylistic preference. It is a structural reality. When the market is moving this fast, when competition is proliferating daily, optimization is a form of standing still. To be ahead of every company entering the vibe-coding space is not a problem of tuning — it is a problem of reinvention. You cannot optimize your way to a category lead you have not yet earned. You have to invent it.</p>
+
+<p>What does growth innovation look like in practice? The Growth team at Lovable ships integrations. They built a Shopify connector to enable e-commerce storefronts. They launched voice mode so users could converse with the product instead of only typing. These are core product features, not traditional growth surface work. The line between growth and product has dissolved. Growth engineers at Lovable are building agentic workflows and codifying agent instructions to improve activation. They are going deeper into the product, not skating its outer edges.</p>
+
+<p>The area Elena expected to spend most of her time on — activation — she has spent almost none of it on. In past companies, activation was always the highest-leverage intervention: get people to the aha moment, smooth out the setup flow, reduce the distance between signing up and genuinely understanding the product's value. At Lovable, the product's core team is already obsessed with activation because activation is just the agent working well. Every time the model improves, every generation becomes better — not just the first one. The entire lifecycle improves simultaneously. Elena does not need to own activation because the entire company already does.</p>
+
+<h2>The Growth Levers That Actually Work</h2>
+
+<p>Build something people genuinely love. This is not a platitude at Lovable — it is load-bearing infrastructure for every other growth lever. The word of mouth loop, the social sharing, the ambassador program, the hiring brand: all of it depends on the product delivering experiences that feel like superpowers. Elena frames it precisely: users at Lovable feel pride in what they have created. They feel like they have unlocked a secret. And people who feel that do not stay quiet about it.</p>
+
+<p>The company name is not incidental here. Every interaction is evaluated against a single question: is this lovable? When it is not, the bug gets fixed immediately. That cultural forcing function keeps the emotional quality of the product from eroding under shipping velocity. It is brand work done through product design rather than through campaign spend.</p>
+
+<p>Make noise in the market, constantly. Lovable ships every day, sometimes multiple times a day. Each engineer who ships is expected to announce it — to their social networks, not through a marketing filter. This is not a marketing strategy so much as a philosophy: velocity of shipping is the core value, and everyone on the team has a marketer inside them. The resulting noise keeps the product feeling alive to lapsed users, triggers re-engagement, and creates a steady drumbeat of reasons to pay attention. Big tier-one launches happen too — the amplification moments designed to step-function shift perception — but the baseline hum of daily shipment is what sustains momentum between them.</p>
+
+<p>Founders and employees posting authentically on LinkedIn and X has replaced SEO as the primary organic channel. This is a shift Elena finds underappreciated. Five years ago, organic growth meant search engine optimization. Today it means social presence — what is the CEO posting, what are team members sharing, what are users saying in public. B2B is not exempt from this. That is where the eyeballs are, and corporate scrubbing has to come off for it to work. Personality, vulnerability, authenticity. It feels uncomfortable for companies trained on polished brand voice. It is also unavoidable.</p>
+
+<p>Influencer marketing outperforms paid social by a factor of ten at Lovable. The reason is format-function fit. Vibe coding is something you have to see to believe. Written copy describing it falls flat. But a ten-second video of someone prompting an app into existence and watching it work — that lands. That drives someone to open a tab and try it themselves. Paid social is being optimized but remains expensive and slow to pay back. Influencers are the demonstration layer that makes the product legible to new audiences.</p>
+
+<p>Community amplifies everything else. Lovable's Discord has hundreds of thousands of members and it runs lively, not as a managed marketing channel but as a genuine gathering place for people learning what is possible. An ambassador program extends that energy outward. The community accelerates word of mouth, increases retention, and creates social density around a product that thrives when people discover it together.</p>
+
+<p>Give the product away. This is the growth lever Elena describes as her growth secret sauce, and it is the one she has never used at any previous company. Lovable gives credits freely — to hackathons, to events, to any user who wants to host a session at their company. The strategic logic is clean: LLM costs that would normally depress margins get reclassified as marketing spend. Instead of competing on Google AdWords against every other vibe-coding company, Lovable puts its product directly in front of people who want to spread it. A user who volunteers to run a Lovable hackathon at their workplace is doing distribution work the company would otherwise have to pay for. The answer is always yes, how much do you need.</p>
+
+<p>The cost structure at Lovable makes this sustainable in a way that surprises people. Two hundred million dollars ARR. One hundred employees. Almost no paid search spend. A lean sales function just beginning to develop enterprise capacity. When you are not burning on ads and sales headcount, you have budget to invest in the product experiences that create word of mouth — and to give the product away as a marketing vehicle. It is product-led growth at its most aggressive possible expression.</p>
+
+<h2>Product Market Fit Is Now a Treadmill</h2>
+
+<p>Elena has crystallized something that most AI companies have not yet named clearly: product market fit is no longer an achievement. It is a treadmill, and the speed is set to a cadence of roughly three months.</p>
+
+<p>Historically, the evolution of product market fit was measured in years. You found fit, scaled aggressively, and only after approaching saturation did you seriously interrogate whether a second or third horizon was needed. The product could hold still while the company caught up. The market could be trusted to move slowly enough that your positioning remained valid.</p>
+
+<p>Neither condition holds now. On the product side, LLMs step-function improve with each major model release — and those releases come every few months. Each new capability ceiling means a new set of things that can be built on top. Companies cannot wait for a model to release and then build; they have to build in anticipation and have the features ready when the model catches up. The company is constantly betting on where technology is going before it arrives.</p>
+
+<p>On the market side, consumer expectations have never evolved this quickly. What users expected from AI eight months ago versus today is unrecognizable. The distance between what is technically possible and what users expect has collapsed. Users who were impressed by a capability in January are impatient with it by April. The tolerance for falling behind is essentially zero.</p>
+
+<p>The result is an organization that looks strange by historical standards. Lovable is a two-hundred-million-dollar ARR company that cannot simply hand the keys to sales and marketing and shift into scaling mode. It has to simultaneously scale and reinvent. It has to find people capable of doing both, which is genuinely a different kind of talent than either role has traditionally required. Every three months, there is a throttle on pure growth execution to re-engage with the product market fit question — and then a short blitz to scale before the next cycle starts again.</p>
+
+<p>Elena carries one active worry about this cycle. The people using vibe-coding tools right now are mostly pioneers — early adopters excited by the capabilities. The latent majority, the adjacent users who would represent the next phase of growth, are not yet captured. And the pioneers are being pulled further and further forward with each model improvement. The risk is that the gap between pioneers and the latent majority grows too wide, that the product never becomes legible to people who are not already wired to explore new technical capabilities. It is not a crisis yet. But it is a structural question that will matter enormously in the next phase of category development.</p>
+
+<h2>How Lovable Hires, and Why It Works</h2>
+
+<p>The company runs lean on purpose. A hundred people generating two hundred million dollars in ARR requires a particular kind of person — someone for whom this work is a calling, not a paycheck. Elena is explicit about the hiring filter: passion, fire in the belly, a sense that this is the biggest opportunity of their life. Impressive logos from previous employers matter less than whether the person would choose this over every other option available to them right now.</p>
+
+<p>High agency and high autonomy are screened for directly. At Lovable, engineers announce their own launches. Marketers build prototypes in Lovable instead of waiting for design sprints. Growth team members ship product integrations and agentic workflows without waiting for traditional product channels. This only works if people can figure out adjacent problems themselves, own things end to end, and do not need structure handed to them.</p>
+
+<p>The company uses paid trial periods to see candidates in action before committing. Probation windows are genuine — not everyone fits, and the pace makes that clear quickly. Elena describes returning from a ten-day vacation and feeling like she needed to re-onboard. The evolution that reads as gradual from the inside is a revolution when seen from the outside. That pace filters candidates more efficiently than any interview process.</p>
+
+<p>Two hiring archetypes that are newly valuable: AI-native new graduates who do not carry the accumulated assumptions of how things have always worked, and former founders — people with high agency who have owned outcomes under pressure and failed, learning something in the process that corporate experience rarely teaches. Neither archetype was particularly prized in traditional tech. Both are now hot.</p>
+
+<h2>Women and the AI Divide</h2>
+
+<p>Elena is worried about something she did not expect to worry about. When she looked at Lovable's user base — a product with a pink and purple brand, explicitly designed to be warm and inviting, named Lovable — women accounted for roughly twenty percent of users. Not fifty. Twenty.</p>
+
+<p>The adoption gap between men and women in AI tools is not new data, but seeing it persist even in the most welcoming possible product context crystallized something. The AI wave is generating extraordinary economic opportunity: the acqui-hire premiums, the hiring demand, the startup valuations. And women are largely absent from it. Not because the barriers are technical — coding skill is no longer a prerequisite for building software. Something else is happening, and Elena does not claim to have the complete answer.</p>
+
+<p>What she is doing about it: She Builds, a women-only hackathon running on Lovable, giving participants forty-eight hours of unlimited access and a community to build inside. The things that get built in those hackathons are not the apps a tech audience would predict. Women build tools for elderly care, for their kids' schools, for their church groups, for neighborhood basketball teams. Hyperlocal problems that mattered but were never economically viable to build before. The ceiling of what someone can create has dropped dramatically, and for the people who find out about it, the results are immediate and personal.</p>
+
+<p>The initiative is not just about representation as a value. It is about who builds software shaping what software gets built. If the people making software are not representative of the people using it, the blind spots compound. Elena wants more voices in the room — not to slow the pioneers down, but to make sure the latent majority gets a chance to lead.</p>
+
+<h2>What To Do With This</h2>
+
+<ul>
+  <li><strong>Invert your innovation-to-optimization ratio immediately if you are in an early or fast-moving category.</strong> If ninety percent of your growth time is optimization, you are tuning a car that is about to be lapped. Identify at least two new growth loops this quarter that do not exist yet.</li>
+  <li><strong>Reclassify your LLM and freemium costs as marketing spend, not cost-of-goods.</strong> If your AI product costs money to give away, giving it away to hackathons, events, and user-led activations is almost always cheaper per acquisition than competing on paid search — and it creates distribution you cannot buy.</li>
+  <li><strong>Replace the MVP with a minimum lovable product standard before shipping anything.</strong> Ask whether the experience you are about to release creates the feeling that users want to tell someone about it. If it does not, do not ship it yet.</li>
+  <li><strong>Have your CEO, founders, and engineers announce their own launches on LinkedIn and X, without a marketing filter.</strong> Social has replaced SEO as the primary organic channel for B2B. Corporate voice kills the signal. Personal, authentic posts from the people building the product are the mechanism.</li>
+  <li><strong>Put your team's brand effort inside the product, not outside it.</strong> If you do not have a brand marketing team, that is fine — invest in the small interaction details, the micro-moments, the personality of the interface. That is where brand actually lives at this stage.</li>
+  <li><strong>Set a hard calendar cadence of re-evaluating product market fit every three months.</strong> Do not wait until growth slows to ask the question. Schedule the review, surface what has changed in the underlying technology and in user expectations, and build that into your planning cycle.</li>
+  <li><strong>Actively recruit AI-native new graduates and failed startup founders alongside experienced operators.</strong> New graduates who have never learned the old way can leapfrog constraints that slow everyone else down. Former founders have owned outcomes and built tolerance for ambiguity that corporate careers rarely develop.</li>
+  <li><strong>Build a community infrastructure early, even if it is just a Discord.</strong> Community amplifies word of mouth, increases retention, and creates a space where users teach each other — reducing your activation cost and generating the social density that makes the product feel like a movement rather than a tool.</li>
+  <li><strong>Screen every hire for high agency and high autonomy, not just skill set.</strong> At Lovable, growth engineers build product features and product engineers announce their own launches. That only works with people who can own the full chain. Hire for that, not for specialization.</li>
+  <li><strong>Make your engineers ship features and talk about them publicly.</strong> If your team does not have enough marketers to cover every release, stop funneling announcements through marketing and start training engineers to own their own launches on social. The velocity requires it.</li>
+</ul>
+
+<h2>Memorable Quotes</h2>
+
+<blockquote>
+  "To be ahead of them is not optimization of the problem, it's reinvention of the solution."
+  <br><em>— Elena Verna</em>
+</blockquote>
+
+<blockquote>
+  "I usually spend maybe 5 percent innovating on growth in my previous roles. Right now, I'm spending 95 percent innovating on growth and only 5 percent on optimization."
+  <br><em>— Elena Verna</em>
+</blockquote>
+
+<blockquote>
+  "It's not a ha moment anymore. It just needs to be a wow moment."
+  <br><em>— Elena Verna</em>
+</blockquote>
+
+<blockquote>
+  "The best way to fix a bug at Lovable is to say 'this is not lovable.' Like when everybody just jumps on it to fix it right there and then."
+  <br><em>— Elena Verna</em>
+</blockquote>
+
+<blockquote>
+  "Viability is left back in the 2010s. Now it's minimum lovable product. That's the only thing that matters."
+  <br><em>— Elena Verna</em>
+</blockquote>
+
+<blockquote>
+  "Every three months, I feel like we have to recapture our product market fit — and not just recapture on the same technology and with same customers. It's both of those pieces of the equation that change every three months."
+  <br><em>— Elena Verna</em>
+</blockquote>
+
+<blockquote>
+  "If somebody, one of our users stands up and says, hey, I'm going to have a hackathon at my work on Lovable, can you give us some free credits to play with? Why would we prevent a person who wants to do all of the marketing and activating job for us from using us? We're like, take it. How much do you need?"
+  <br><em>— Elena Verna</em>
+</blockquote>
+
+<blockquote>
+  "I often call AI average intelligence that helps me get the platform up. And then I add my human thinking and my human creativity on top of it to get it to the next level."
+  <br><em>— Elena Verna</em>
+</blockquote>]]></description>
+    </item>
+    <item>
+      <title>Lenny's Podcast: Product | Career | Growth - A guide to difficult conversations, building high-trust teams, and designing a life you love | Rachel Lockett</title>
+      <link>https://vscpr.github.io/jubilant/items/Summary%20-%20Lenny%27s%20Podcast%20Prod%20-%20gh-trust%20teams%2C%20and%20designing%20a%20life%20you%20love%20Rachel%20Lockett.txt.html</link>
+      <guid isPermaLink="false">id:PodcastContent211/v4/99/d0/92/99d09287-6181-38c8-0159-fff9bc212e22/transcript_1000737987533.ttml.ttml</guid>
+      <pubDate>Fri, 27 Feb 2026 15:01:20 GMT</pubDate>
+      <description><![CDATA[<h2>The Human Side of Building: What Most Tech Leaders Get Wrong</h2>
+
+<p>There's a reason the most effective leaders aren't the ones with all the answers. Rachel Lockett has spent more than a decade coaching CEOs, co-founders, and technical executives at some of the fastest-moving companies in tech—Pinterest, Stripe, Coinbase, and beyond—and the pattern she sees again and again is the same: leaders who climbed the ladder by being the smartest person in the room can't figure out why that same approach is breaking down now that they're actually in charge.</p>
+
+<p>The problem isn't competence. It's that they've trained their teams to bring them every hard problem. Every decision, every blocker, every escalation flows upward. The leader becomes the bottleneck—and resents it—while the team waits for answers instead of developing the capacity to find them.</p>
+
+<p>The antidote isn't a management philosophy. It's two learnable skills that most leaders never bother to develop: active listening and powerful questions. Together, they form the foundation of what Rachel calls leader-as-coach—and she's emphatic that this doesn't mean setting up hour-long coaching sessions with every report. It means carving out 15% more space in the conversations you're already having.</p>
+
+<h2>Three Levels of Listening—and Why Most Leaders Are Stuck at Level One</h2>
+
+<p>Most people aren't listening. They're waiting for their turn to talk. This is especially true in tech, where speed is rewarded and pausing to truly hear someone can feel like inefficiency.</p>
+
+<p>But there are three distinct levels of listening, and the gap between them determines whether you're actually useful to the people around you. Level one is internal listening—you're hearing someone's words, but your attention is on yourself: the implications for your own work, your own agenda, your own reaction. Most people operate here most of the time.</p>
+
+<p>Level two is focused listening: you can repeat back what was said, you're tracking the content, you're present to the words. This is what a solid one-on-one looks like. Better than level one, but still incomplete.</p>
+
+<p>Level three is global listening—hearing beneath the words. You're noticing tone, body language, what's being communicated versus what's being said. You can reflect back insight that the person didn't even fully articulate. This is what great leaders do when they're influencing, when they're selling a vision, and especially when they're coaching.</p>
+
+<p>The demonstration Rachel runs live makes this concrete. She asks Lenny what it's like to be a dad. He gives an answer about joy and challenge. She reflects back not just the content but the emotional undertow—the way he squirmed before answering, the coexistence of deep love and the discomfort of sleep training and disappointed toddlers. "Nailed it," he says. And then she makes the key point: that took less than a minute. Active listening isn't a program. It's a different quality of attention you bring to conversations you're already having.</p>
+
+<h2>The GROW Model: A Framework That Fits in Your Pocket</h2>
+
+<p>The second skill is powerful questions. Not leading questions—those are just advice in disguise. Genuine, open-ended questions that help someone unlock a solution they already have access to but can't quite see.</p>
+
+<p>The GROW model organizes these into four categories. Goal: what does success look like? What's the outcome you want? Reality: where are you stuck, what have you tried, what are the current constraints? Options: what paths could you take, what haven't you considered? Way forward: what are you going to do next?</p>
+
+<p>The order doesn't matter. You might skip directly to reality if the goal is already clear. The point is that any of these questions, asked with genuine curiosity and paired with level-three listening, will help someone move from stuck to unstuck. Rachel demonstrates this with a live coaching session on Lenny's own challenge—the endless treadmill of content creation, the Indiana Jones boulder always in the rearview mirror. In fifteen minutes, she walks him through the GROW model in real time. He comes out with two concrete commitments: skip at least one newsletter that's already been promised flexibility, and revisit his policies on what he says yes to.</p>
+
+<p>The reason coaching works better than advising—most of the time—is simple: people are more bought in to what they came up with themselves. You could hand someone a perfectly correct list of things to do and they'll half-do it. But when they generate the answer from their own understanding of the problem, they own it.</p>
+
+<p>The heuristic for when to advise versus coach is also simple. Advise when there's urgency and you have the specific answer. Advise when the person genuinely lacks the skill or context to solve the problem. Advise when you know exactly what you want them to do and coaching would just be a game of "guess what I'm thinking." Every other situation is a candidate for coaching—and most leaders over-rotate toward advising by default.</p>
+
+<h2>Burnout Isn't Inevitable—It's a Design Problem</h2>
+
+<p>The people who stay energized over a decade-plus career aren't just tougher. They've solved a different problem: they've designed their work around their gifts.</p>
+
+<p>This sounds aspirational to the point of uselessness until you sit with the evidence. Rachel watched Stripe's top 50 technical executives—some of the most capable, committed people in tech—and saw how exhausted they were. People who started with enormous inspiration and capacity had been grinding so long they'd lost access to what made the work meaningful in the first place. Meanwhile, she's watched other people maintain energy and curiosity across genuinely hard years. The difference isn't luck or constitution. It's whether they're spending most of their time on things they're naturally good at and genuinely drawn to.</p>
+
+<p>The practical target is 80%. You're always going to have 20% of your work be things you don't love—logistics, obligations, things that come with the territory. But if you can get to 80% in your zone of genius, the energy is fundamentally different. The work itself refuels you.</p>
+
+<p>The diagnostic is concrete: for two weeks, every evening, write down five things that gave you energy today and five things that depleted you. Look at the patterns. That's your data. Alternatively, send a short email to five to ten people who know you well and ask: when I walk in a room, what shows up? What are my gifts? Sometimes the people around us see our zone of genius more clearly than we do—and sometimes what we discover is that we've drifted far from it without noticing.</p>
+
+<p>Rachel's own path made this real. She was running the UX research team at Remind when the CEO offered her a product manager role. She took it. She was effective at it—within a month the team was reviewing each other's code, disagreeing productively, connecting more deeply to users. But at home she was losing sleep over design decisions, over-relying on data scientists, swirling on choices that didn't warrant that kind of anxiety. A colleague watched this and told her plainly: her gift wasn't product strategy. It was people. He could see what she'd done to that team in a month and knew it wasn't replicable by someone who didn't lead the way she led.</p>
+
+<p>She was offended. And then she knew he was right. She left product, trained as a coach, moved into HR leadership, and built toward the work that now lets her spend the day fully in her gifts. "Life is more fun when you're in your gifts," she says. "And you have more inspiration and capacity to offer the world."</p>
+
+<p>For people who can't just redesign their roles immediately: start small. Stop attending the optional meetings that drain you. Build buffers after the depleting things you can't avoid—a walk, a reset, something that refuels the tank. Tell your manager what energizes you and what doesn't. Most managers want to retain great performers and will work with this information if you give it to them honestly. No one else is going to do this for you. It's not your manager's job to make your work interesting. It's yours.</p>
+
+<h2>Co-Founder Relationships: The Conversation Nobody's Having</h2>
+
+<p>Sixty-five percent of startups fail because of co-founder conflict. The relationship is one of the highest-stakes in business—comparable to a marriage in terms of interdependence and emotional charge—and it gets almost no infrastructure. People don't take it to their board. They don't talk about it openly. It keeps them up at night while they're supposed to be building the future.</p>
+
+<p>The first thing that helps is understanding the dance you're already in. CTOs tend to be skeptics—they want facts, depth of understanding, self-sufficiency. CEOs tend to be optimists—selling ahead of reality, influencing, big-picture vision. These archetypes create predictable tensions. Knowing the dynamic you're in means you're not just stepping on each other's toes blindly. You're dancing with awareness.</p>
+
+<p>The second thing is intentional commitment. Just like couples need date nights, co-founders need time specifically for the relationship—not the business, the relationship. Quarterly in-person check-ins. Regular lunches or dinners. Space to ask: are we still aligned on vision? What have I been doing that's frustrated you? What's gone unsaid? These conversations don't happen by accident in the middle of a scaling startup. You have to design for them.</p>
+
+<p>Rachel co-wrote a piece with First Round that offers weekly, monthly, and annual questions co-founders can work through together. The vows aren't a one-time ceremony—they're a framework for revisiting what you've committed to and whether you're still living up to it.</p>
+
+<p>When co-founders arrive already fractured—which is more common than people admit—the work is harder but not impossible. What tends to help is the same thing that helps marriages: naming current state honestly, acknowledging what each person is missing from the other, and creating a rhythm of connection that the scaling chaos had eroded. Sometimes what comes out of that process is renewed commitment. Sometimes it's clarity that one person needs to leave. Both outcomes are success. The alternative—muddling through in unconscious frustration, unable to name what's wrong—serves no one.</p>
+
+<h2>Difficult Conversations: Reframing the Marketing</h2>
+
+<p>The marketing on conflict is terrible. "Difficult conversation" is positioned as something to avoid, something unpleasant, something that drains energy. Rachel argues the opposite: if a conversation feels hard, it's because something important is at stake. You care about this person or this work or this relationship. The difficulty is information.</p>
+
+<p>The first reframe: ambivalence and interpersonal friction are growth opportunities. You're not failing. You're encountering something important that you have something to learn from.</p>
+
+<p>The second reframe: you are always contributing to the conflict. Even when the other person seems clearly in the wrong. Something you're doing—or not doing, or not saying—is part of the dynamic. Entering with that humility makes the conversation possible in a way that righteous certainty never will.</p>
+
+<p>The framework Rachel uses is Marshall Rosenberg's Nonviolent Communication, condensed to four steps. Observations: what is factually happening, stated in a way no one could argue with. ("In the last three sprint planning meetings, you didn't include me.") Feelings: what emotion does this create for you, expressed without blame. ("I felt anxious. I felt confused.") Feelings are emotions—words like "anxious," "confused," "sad," "frustrated." Not "I feel like you're being a jerk." That's a judgment, not a feeling. Needs: what universal human need is unmet here. Clarity. Collaboration. Connection. This doesn't ask anything of the other person yet. It just helps them understand the stakes. Request: something specific, achievable, small. An olive branch, not a demand.</p>
+
+<p>The goal of this entire structure is mutual understanding—not convincing someone they were wrong, not proving your case, not winning. When you stay on your side of the net, describing your own experience rather than characterizing theirs, the defensive response you'd normally trigger doesn't come. And without defensiveness, the other person can actually hear you.</p>
+
+<p>The question Rachel uses at Stripe to force clarity on talent: would you enthusiastically rehire this person for the same role? The answer is physical. You know it before you think it. And if the answer is no, that's not a verdict—it's a prompt to act. Maybe it's a conversation about performance. Maybe it's a role change. Maybe it's a search. But the clarity that comes from asking that question honestly is what makes action possible.</p>
+
+<h2>The One-Page Plan: Simplicity as Strategy</h2>
+
+<p>Most companies have their vision in one place, their values in another, their OKRs in a third, their quarterly goals in a fourth. Ask anyone in the company how their work ladders up to the big picture and you'll get a shrug. The strategy exists—it's just distributed in ways that make it inaccessible.</p>
+
+<p>The one-page plan collapses this. Four columns: vision and values, strategic intentions and KPIs, annual goals, quarterly goals. Everything visible at once, so the connection from daily work to long-term direction is never more than one glance away. Rachel adapted this from Alpine Investors' People First Operating Rhythm, which their portfolio data shows correlates with higher returns.</p>
+
+<p>The plan matters less than the rhythm around it. Who gathers to create it, how they reflect on it quarterly, what questions they ask to surface what's not working, how they celebrate wins. The question she likes in quarterly reviews: what's an inconvenient truth? The thing everyone knows but no one's saying because there's always something more urgent.</p>
+
+<p>Leadership teams need time on the balcony—away from the dance floor, looking down at what's actually happening. Not just executing but periodically working on the business rather than in it. The one-page plan gives the balcony a view worth having.</p>
+
+<h2>Connection in an Era of Loneliness</h2>
+
+<p>The world is getting lonelier. The research confirms it, and Rachel sees it in her coaching sessions—people who are building alongside others feel more alienated than ever. The AI boom gives leaders more capability at their fingertips. But the default state of modern work—blind, grind, loneliness—hasn't changed.</p>
+
+<p>Building businesses is an inherently human endeavor. The technical founders who discover three years in that they're now managing a board and a team, doing a completely different job than the one they loved, are living proof that the human side catches up with you whether you plan for it or not. Better to attend to it deliberately. Create environments where connection is inevitable. Equip the people around you with the coaching questions, the NVC framework, the emotional vocabulary to actually reach each other.</p>
+
+<p>The quality of your relationships determines the quality of your life. That's not a soft claim. It's the thing that sits under everything else Rachel does—why she believes that technical leaders who lean into the human side of their work don't just feel better, they build better companies.</p>
+
+<h2>What To Do With This</h2>
+
+<ul>
+  <li><strong>Practice level-three listening in your next one-on-one.</strong> After someone shares a problem, reflect back not just what they said but what you sensed they were feeling underneath it. Ask if you got it right. This takes less than two minutes and dramatically changes the quality of the conversation.</li>
+  <li><strong>Ask "what does success look like?" before jumping to solutions.</strong> When someone brings you a problem, run them through the GROW model—goal, reality, options, way forward—before offering your own answer. Only advise if they've demonstrated they lack the knowledge or context to get there themselves.</li>
+  <li><strong>Try the two-week energy audit.</strong> Every evening for 14 days, write down five things that gave you energy and five things that depleted you. Look for patterns. This data tells you where your zone of genius actually is, not where you assume it should be.</li>
+  <li><strong>Email five to ten people who know you well and ask:</strong> "When I walk in the room, what shows up? What are my gifts?" You'll get useful signal you can't generate from self-reflection alone.</li>
+  <li><strong>Use the NVC framework before your next difficult conversation.</strong> Structure what you want to say as observations (facts only), feelings (emotions, not judgments), needs (universal human needs), and a specific, achievable request. Practice staying on your own side of the net.</li>
+  <li><strong>Ask "would I enthusiastically rehire this person for the same role?"</strong> about anyone on your team you've been uncertain about. If the answer is no, you have a decision to make—but at minimum you have clarity, which is more than most leaders let themselves have.</li>
+  <li><strong>Schedule a co-founder check-in—not a business meeting, a relationship check-in.</strong> Use questions from Rachel's First Round piece. Ask what's gone unsaid. Ask what you've been doing that's been frustrating. Do this quarterly at minimum, in person when possible.</li>
+  <li><strong>Build a one-page plan with four columns:</strong> vision/values, strategic intentions/KPIs, annual goals, quarterly goals. Make it accessible to the whole company. Use it as the backbone of quarterly reviews, and add one question to every review: "What's the inconvenient truth we're not saying?"</li>
+  <li><strong>Whenever you feel an urge to avoid a conversation, ask "what do I have to learn here?"</strong> Reframe the discomfort as a signal that something important is at stake, not a reason to wait. The cave you fear contains the treasure you seek.</li>
+  <li><strong>Tell your manager explicitly what energizes you and what drains you.</strong> Don't wait for them to figure it out. Managers want to retain good performers and can work with this information. It's your job to navigate your career—not theirs.</li>
+</ul>
+
+<h2>Memorable Quotes</h2>
+
+<blockquote>
+  "When you try to advise and have the answer all the time, you're not actually equipping your team to go solve the hard problems. You're training your team to come to you with all of the hard problems."
+  <p>— Rachel Lockett</p>
+</blockquote>
+
+<blockquote>
+  "Most people aren't listening, they're just waiting for their turn to talk. This is rampant in tech."
+  <p>— Rachel Lockett</p>
+</blockquote>
+
+<blockquote>
+  "It's no one else's job to help you live in your gifts. Your manager's job is to help you perform in the job you were hired to do. It's your job to navigate your career."
+  <p>— Rachel Lockett</p>
+</blockquote>
+
+<blockquote>
+  "There's a misguided view that the goal is to convince the other person that what they're doing is wrong. Actually, the goal of any conflict is to create mutual understanding."
+  <p>— Rachel Lockett</p>
+</blockquote>
+
+<blockquote>
+  "If you can see your path laid out in front of you, step by step, it's not your path. Your own path you make with every step you take. That's why it's your path."
+  <p>— Joseph Campbell (Rachel Lockett's desk quote)</p>
+</blockquote>
+
+<blockquote>
+  "I want to encourage listeners to think of themselves as leaders who bring humans together to self-actualize—and that they have to actively overcome the default state, which is blind, grind, and loneliness."
+  <p>— Rachel Lockett</p>
+</blockquote>
+
+<blockquote>
+  "The quality of our relationships determines the quality of our life. And if you cannot have conflict, you can't have healthy relationships."
+  <p>— Rachel Lockett</p>
+</blockquote>
+
+<blockquote>
+  "When people are in their gifts and their strengths firmly, most of the time, they have more energy. We all have more energy when we're operating from the things we naturally are good at and the things we innately love doing."
+  <p>— Rachel Lockett</p>
+</blockquote>]]></description>
+    </item>
     <item>
       <title>The Tim Ferriss Show - #851: Dr. Tommy Wood — How to Future-Proof Your Brain from Dementia</title>
       <link>https://vscpr.github.io/jubilant/items/Summary%20-%20The%20Tim%20Ferriss%20Show%20-%20r.%20Tommy%20Wood%20%E2%80%94%20How%20to%20Future-Proof%20Your%20Brain%20from%20Dementia.txt.html</link>
